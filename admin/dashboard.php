@@ -45,7 +45,7 @@ $staff = $_SESSION['Admin'];
 					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
-					<a class="alightred" href="../index.php">Logout</a>
+					<a class="alightred" href="../login.php">Logout</a>
 					</div>
 				</div>
 			</div>

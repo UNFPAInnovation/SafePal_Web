@@ -17,7 +17,7 @@
 	   
 	if($num_row  == 0) 
 	{
-	header("location: index.php");
+	header("location: login.php");
 	exit();
 	}
 	
@@ -30,7 +30,7 @@
 	{
 	$_SESSION['Admin']= $user;
 	$_SESSION['password'] = $password;
-	$_SESSION['fname'] = $row['fullname '];
+	$_SESSION['fname'] = $row['fullname'];
 	$_SESSION['ID'] = $row['user_id'];
 	$_SESSION['username'] = $row['username'];	
 	$_SESSION['usergroup'] = $row['user_categories_user_category_id'];	
@@ -41,17 +41,21 @@
 	else if($usergroup =='CSO')
 							
 	{
-	
-	
-							
-	header("");
+	$_SESSION['CSO']= $user;
+	$_SESSION['password'] = $password;
+	$_SESSION['fname'] = $row['fullname'];
+	$_SESSION['ID'] = $row['user_id'];
+	$_SESSION['username'] = $row['username'];	
+	$_SESSION['usergroup'] = $row['user_categories_user_category_id'];	
+
+	header("location: cso/dashboard.php");
 	}
 	
 
 	
 	else
 	{
-	header("location: index.php");
+	header("location: login.php");
 	}
 			
 ?>

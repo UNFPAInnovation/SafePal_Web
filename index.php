@@ -12,9 +12,9 @@
 <script src="admin/argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="admin/js/application.js" type="text/javascript" charset="utf-8"></script>	
 <!--sa poip up-->
-<link href="admin/src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
    <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  <script src="admin/src/facebox.js" type="text/javascript"></script>
+  <script src="admin/src/report/facebox.js" type="text/javascript"></script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
@@ -24,7 +24,53 @@
     })
   </script>
   
-  
+      <style type="text/css">
+
+        ul{
+            padding: 0;
+            list-style: none;
+            background: #ffffff;
+			text-align: right;
+			margin-top:10px
+        }
+        ul li{
+            display: inline-block;
+            position: relative;
+            line-height: 21px;
+            text-align: left;
+        }
+        ul li a{
+            display: block;
+            padding: 8px 25px;
+            color: #333;
+            text-decoration: none;
+
+        }
+        ul li a:hover{
+            color: #fff;
+            background: #939393;
+        }
+
+        ul li ul.dropdown{
+            min-width: 100%; /* Set width of the dropdown */
+            background: #f2f2f2;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+        }
+
+        ul li:hover ul.dropdown{
+
+            display: block; /* Display the dropdown */
+        }
+        ul li ul.dropdown li{
+
+            display: block;
+
+        }
+
+    </style>
 <meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
@@ -65,29 +111,58 @@
 			<div class="container">
 					
 				<!-- Logo -->
-					<div id="logo">
-						<h1><a href="#">SafePal</a></h1>
+										
+<div style="position:relative; left: 0; top: 0;">    
+<img src=".\images\logo1.png" style="position:relative;width:140px;height:90px;float:left; margin-top:-25px;">
+<div style="position:relative; left: 30; top: 0;" id="logo">
+						<h1 align="left"><a href="#">SafePal</a></h1> 
+ 
 					</div>
+</div>
 				
-				<nav id="nav">
-						<ul>
-<li class="active"><a href="index.php">Home</a></li>
-<li><a href="connectwithus.php">Connect With Us</a></li>
-<li><a rel="facebox" href="reportingincidence.php">Report An Incident</a></li>
-<li><a href="help.php">Help</a></li>
-<li><a rel="facebox" href="login.php">log in</a></li>
-						</ul>
-					</nav>
+						
+				
+				 <ul>
+            <div style="margin-top: -70px;">
+           <li><a href="index.php">Home</a></li>
+            <li class="active">
+
+                <a href="#">Report an Incidence &#9662;</a>
+
+                <ul class="dropdown">
+
+                    <li><a  rel="facebox" href="message.php">For myself</a></li>
+
+                    <li><a rel="facebox" href="messagetoFriend.php">For a Friend</a></li>
+
+                    
+                </ul>
+
+            </li>
+
+            <li><a href="connectwithus.php">Connect with Us</a></li>
+ <li><a href="help.php">Help</a></li>
+        </ul>
+				
+				
+				
+				
 
 			</div>
 		</div>
 	<!-- Header -->
 		
 	<!-- Banner -->
-		<div id="banner">
-			<div class="container">
-			</div>
-		</div>
+		 <div id="banner">
+                  <div style="position:relative; left: 0; top: 0;">
+ <a href=".\images\Safepal.apk" download = "Safepal.apk">
+<img src=".\images\ee.png"
+style="position:relative;width:180px;height:80px;float:right;"> </a>
+</div>
+                <div class="container">
+
+              </div>
+                </div>
 	<!-- /Banner -->
 
 	<!-- Main -->
@@ -221,7 +296,7 @@
 
 	<!-- Copyright -->
 		<div id="copyright" class="container">
-Copyright	@ <a href="http://safepal.com">SafePal Designers</a> 
+Copyright	@ <a href="http://safepal.com">SafePal Designers : <br><a href="login.php">login into Safe Pal</a></a> 
 	</div>
 
 

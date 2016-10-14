@@ -55,7 +55,7 @@ img.logo {
 	margin: 0 0 0 2px;
 }
 #mainnav li a:hover {
-	background: transparent url(../images/nav-bg.png) repeat-x top left;
+	background: transparent url(../ximages/nav-bg.png) repeat-x top left;
 	color:#d0934d;
 	}
 #mainnav li.current a:link {
