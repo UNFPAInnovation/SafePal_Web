@@ -122,7 +122,7 @@
 				
 					 <ul>
             <div style="margin-top: -70px;">
-            <li><a href="index.php">Home</a></li>
+     
             <li class="active">
 
                 <a href="#">Report an Incidence &#9662;</a>

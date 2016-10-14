@@ -124,7 +124,7 @@
 				
 				 <ul>
             <div style="margin-top: -70px;">
-            <li><a href="index.php">Home</a></li>
+    
             <li class="active">
 
                 <a href="#">Report an Incidence &#9662;</a>
@@ -178,7 +178,8 @@ style="position:relative;width:180px;height:80px;float:right;"> </a>
 							 <a rel="facebox" href="contactincidence.php">YES</a>
 							 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 							 <a rel="facebox" href="no.php">NO</a>
-							
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+							 <a href="index.php">Go back to Home page</a>
 							</p>
 
 			</div>

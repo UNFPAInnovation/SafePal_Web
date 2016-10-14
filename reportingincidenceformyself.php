@@ -59,7 +59,24 @@ height: 34px;
 
 <a href="">Welcome to the instant Web reporter</a><br />
 <table>
-		  
+		  <tr><td>When is your birthday:<?php
+		 
+		  $myCalendar = new tc_calendar("date1", true);
+		  $myCalendar->setIcon("./calendar/images/iconCalendar.gif");
+		  $myCalendar->setDate(date('d'), date('m'), date('Y'));
+		  $myCalendar->setPath("./calendar/");
+		  $myCalendar->zindex = 150; //default 1
+		  $myCalendar->setYearInterval(1995, date('Y'));
+		  $myCalendar->dateAllow('1960-03-01', date('Y-m-d'));
+		  //$myCalendar->autoSubmit(true, "calendar");
+		  //$myCalendar->setDateFormat('l, dS \of F Y');
+		  $myCalendar->disabledDay("sat");
+		  $myCalendar->disabledDay("sun");
+		  $myCalendar->setSpecificDate(array("2011-04-14", "2010-12-25"), 0, 'month');
+		  $myCalendar->setSpecificDate(array("2011-04-01"), 0, 'year');
+		  $myCalendar->setAlignment('right', 'bottom'); //optional
+		  $myCalendar->writeScript();
+		  ?></td> </tr>
 		  <tr><td>What is your estimated age (**):<input name="age" type="text" class="ed" size="23px"/></td>
   </tr>
 <tr><td>Are you a Boy or Girl:<select name="sex" class="ed">
