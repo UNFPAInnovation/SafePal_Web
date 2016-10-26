@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>SafePal- v1</title>
+		<title>SafePal-v1</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 		
