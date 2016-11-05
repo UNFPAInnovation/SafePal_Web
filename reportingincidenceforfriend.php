@@ -2,18 +2,13 @@
 <script type="text/javascript">
 function validateForm()
 {
-var a=document.forms["name"]["name"].value;
+var a=document.forms["addinc"]["story"].value;
 if (a==null || a=="")
   {
-  alert("Pls. Enter  name");
+  alert("Pls. Tell us the story");
   return false;
   }
-var b=document.forms["sex"]["sex"].value;
-if (b==null || b=="")
-  {
-  alert("Pls. Enter sex");
-  return false;
-  }
+
 }
 </script>
 <!--sa poip up-->
@@ -50,19 +45,20 @@ height: 34px;
 -->
 </style>
 
-<form action="addexec5.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
+<form action="addexec5.php" method="post" enctype="multipart/form-data" name="addinc" onsubmit="return validateForm()">
 
-<a href="">Welcome to the instant Web reporter for friend</a><br />
+<a href="">Welcome to the instant Web reporter</a><br />
 <table>
-<tr><td>What is your relationship with the survivor:<select name="sex" class="ed">
+<tr><td>What is your relationship with the survivor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="rel" class="ed">
  <option value="Male">Relative</option>
   <option value="Female">Friend</option>
    <option value="Female">Schoolmate</option>
     <option value="Female">Other</option>
   </td> </tr>
-<tr><td>How old is He/She:<select name="sex" class="ed">
+<tr><td>How old is He/She:<select name="age" class="ed">
  <option value="Male">Below 10</option>
-  <option value="Female">Between 10 - 24</option>
+  <option value="Female">Between 10-24</option>
    <option value="Female">Above 24</option>
      </td> </tr>
 	 <tr><td>My Friend is a:<select name="sex" class="ed">
@@ -70,28 +66,17 @@ height: 34px;
   <option value="Female">Girl</option>
      </td> </tr>
   <tr>
-<td>What happened to your freind:<select name="sex" class="ed" >
+<td>What happened to your freind:<select name="whathappened" class="ed" >
  <option value="Male">Bad Touches</option>
   <option value="Female">Some one tried to rape my friend</option>
    <option value="Female">My friend raped</option>
     <option value="Female">My friend was defiled</option>
 	 <option value="Female">Other</option>
   </select></td> </tr>
-   <tr> <td>Tell us the story:<textarea name="des" class="ed">
+   <tr> <td>Tell us the story:<textarea name="story" class="ed">
 </textarea></td>
   </tr>
-<tr><td>Do you want to be contcated:<select name="sex" class="ed">
- <option value="Male">Yes</option>
-  <option value="Female">No</option>
-  </td> </tr>
-<tr><td>If Yes give us number:<input name="name" type="text" class="ed"  size="23px"/></td> </tr>
-<tr><td>And your location:<select name="sex" class="ed" >
- <option value="Male">Mbarara</option>
-  <option value="Female">Kampala</option>
-   <option value="Female">Bushenyi</option>
-    <option value="Female">Ishaka</option>
-	 <option value="Female">Other</option>
-  </select></td> </tr>
+
 <tr><td><input type="submit" name="Submit" value="Report incidence" id="button1" /></td></tr>
      
  </table>
