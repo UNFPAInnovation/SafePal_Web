@@ -1,4 +1,21 @@
 
+<script type="text/javascript">
+function validateForm()
+{
+var a=document.forms["name"]["name"].value;
+if (a==null || a=="")
+  {
+  alert("Pls. Enter  name");
+  return false;
+  }
+var b=document.forms["sex"]["sex"].value;
+if (b==null || b=="")
+  {
+  alert("Pls. Enter sex");
+  return false;
+  }
+}
+</script>
 
 <!--sa poip up-->
 <link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
@@ -16,7 +33,7 @@
 
 
 
-<p align="center" color="blue"><strong align="right">SafePal web Reporter</strong></p>
+<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
 
 					<div class="events_content">Know that the sexual violence wasn't your fault</div>
@@ -26,7 +43,7 @@
 					        </div></div>
 					
 
-<tr><td><a rel="facebox2" href="reportingincidenceformyself.php"><img alt="Statistics"  src="images/report2.png" title='manage user levels'><span>Click on the image to proceed and Report</span></a></td></tr>
+<tr><td><a rel="facebox2" href="reportingincidenceforfriend.php"><img alt="Statistics" src="images/report2.png" title='manage user levels'><span>Click on the image to proceed and Report</span></a></td></tr>
 
      
  </table>
