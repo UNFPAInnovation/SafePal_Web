@@ -171,8 +171,14 @@ style="position:relative;width:180px;height:80px;float:right;"> </a>
 
 			<!-- Extra -->
 			<div id="marketing" class="container" style="margin-top: -5%;color:#D71D5B;size:150px";align="center">
-				<p align="center" > <strong align="right" style="color:red;"><font size="6">Thank you very much, the incident has been Recorded.</font> </strong></p>
-			
+			<?php
+							include('connect.php');
+							$result = mysql_query("SELECT * FROM incident_report_details ORDER BY incident_report_id DESC LIMIT 1");
+							while($row = mysql_fetch_array($result))
+								{
+		echo  '<p align="center" > <strong align="right" style="color:red;"><font size="6">Thank you very much, the incident has been Recorded with Reference number SFPINC'.$row['incident_report_id'].'</font> </strong></p>';
+				}
+							?> 
 				<p align="center" style="color:red;"><strong align="right">Do you wish to be contacted?.</strong></p>
 				
 					<p align="center" style="color:blue;"><strong align="right"> <a rel="facebox" href="contactincidence.php">YES</a> &nbsp;&nbsp;
