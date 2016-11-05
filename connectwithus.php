@@ -128,9 +128,9 @@
 
                 <ul class="dropdown">
 
-                    <li><a  rel="facebox" href="message.php">For myself</a></li>
+  <li><a  rel="facebox" href="reportingincidence.php">For myself</a></li>
 
-                    <li><a rel="facebox" href="messagetoFriend.php">For a Friend</a></li>
+                    <li><a rel="facebox" href="reportingincidencefrd.php">For a Friend</a></li>
 
                     
                 </ul>
