@@ -2,13 +2,44 @@
 <script type="text/javascript">
 function validateForm()
 {
-var a=document.forms["name"]["name"].value;
+var a=document.forms["age"]["age"].value;
 if (a==null || a=="")
   {
-  alert("Pls. Enter  name");
+  alert("Pls. Enter  your age");
   return false;
   }
 var b=document.forms["sex"]["sex"].value;
+if (b==null || b=="")
+  {
+  alert("Pls. Enter sex");
+  return false;
+  }
+  var c=document.forms["place"]["place"].value;
+if (c==null || c=="")
+  {
+  alert("Pls. Enter place of incidence");
+  return false;
+  }
+  var d=document.forms["whathappened"]["whathappened"].value;
+if (d==null || d=="")
+  {
+  alert("Pls. Enter what happened");
+  return false;
+  }
+  var e=document.forms["story"]["story"].value;
+if (e==null || e=="")
+  {
+  alert("Pls. Briefly Tell us the story");
+  return false;
+  }
+  
+  var b=document.forms["sex"]["sex"].value;
+if (b==null || b=="")
+  {
+  alert("Pls. Enter sex");
+  return false;
+  }
+  var b=document.forms["sex"]["sex"].value;
 if (b==null || b=="")
   {
   alert("Pls. Enter sex");
