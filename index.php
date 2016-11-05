@@ -16,7 +16,7 @@
    <script src="admin/lib/jquery.js" type="text/javascript"></script>
   <script src="admin/src/report/facebox.js" type="text/javascript"></script>
   <script type="text/javascript">
-    jQuery(document).ready(function($){
+    jQuery(document).ready(function($){ 
       $('a[rel*=facebox]').facebox({
         loadingImage : 'src/loading.gif',
         closeImage   : 'src/closelabel.png'

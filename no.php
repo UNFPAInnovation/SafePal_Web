@@ -24,7 +24,7 @@ require('./calendar/tc_calendar.php');
 <!--sa poip up-->
 <link href="admin/src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
    <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  <script src="admin/src/facebox.js" type="text/javascript"></script>
+
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
