@@ -19,13 +19,19 @@
       })
     })
   </script>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
-<title>SafePal - Admin Dashboard</title>
+<title>Admin Panel - track</title>
 </head>
 <body>
 	<div id="container">
@@ -46,18 +52,18 @@
 				</div>
 			</div>
 		</div>
-		<div id="panel-outer" class="radius" style="opacity: 1" style="margin-top:10%">
-			<div id="panel" class="radius" >
+		<div id="panel-outer" class="radius" style="opacity: 1;">
+			<div id="panel" class="radius">
 				<ul class="radius-top clearfix" id="main-menu">
 					<li>
 						<a class="active" href="dashboard.php">
-							<img alt="Dashboard" src="img/m-dashboard.png" title='Home'>
+							<img alt="Dashboard" src="img/m-dashboard.png" title='view current orders,instant message also sent to farmer'>
 							<span>Dashboard</span>
 						</a>
 					</li>
 					<li>
 						<a href="user.php">
-							<img alt="Users" src="img/m-users.png" title='manage users'>
+							<img alt="Users" src="img/m-users.png">
 							<span>Users</span>
 							<span class="submenu-arrow"></span>
 						</a>
@@ -66,44 +72,44 @@
 					
 					<li>
 						<a href="levels.php">
-							<img alt="Statistics" src="img/add.png" title='manage user levels'>
-							<span>Levels</span>
+							<img alt="Statistics" src="img/add.png" title='add user levels'>
+							<span>User Groups</span>
 						</a>
 					</li>
 					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage course units'>
+							<img alt="Statistics" src="img/re.png" title='Manage the incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
 					<li>
 					<a href="cso.php">
-							<img alt="Statistics" src="img/m-statistics.png" title='manage CSOs'>
+							<img alt="Statistics" src="img/m-statistics.png" title='Manage CSOs on the platform'>
 							<span>CSO</span>
 						</a>
-					</li> 
+					</li>
 					<li>
 						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+							<img alt="Statistics" src="img/pr.png" title=' forecast the price changes for the commodity and generate graphs'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<img alt="Dashboard" src="img/cont.png" title='view current contracts'>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
+										<a href="newincidents.php">
 							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="profile.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>My Profile</span>
+						<a href="settings.php">
+							<img alt="Articles" src="img/m-articles.png">
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>

@@ -5,6 +5,13 @@ if(isset($_SESSION['Admin'])!='' && isset($_SESSION['password'])!='')
 {
 $staff = $_SESSION['Admin'];
 ?>
+
+	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
 <html>
 <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -95,19 +102,19 @@ $staff = $_SESSION['Admin'];
 					<li>
 						<a href="followup.php">
 							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
 						<a href="notifications.php">
 							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="webreport.php">
+						<a href="settings.php">
 							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
@@ -130,63 +137,68 @@ $staff = $_SESSION['Admin'];
 						<tbody>
 						<?php
 							include('connect.php');
-							$sql = mysql_query("SELECT COUNT(survivor_name) from  incident_report_details WHERE status='New'");
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
 							$result = mysql_fetch_array($sql);
 							
-							$sql2 = mysql_query("SELECT COUNT(survivor_name) from  incident_report_details WHERE authority='Police'");
+							$sql2 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='DWTBC'");
 							$result2 = mysql_fetch_array($sql2);
 							
-							$sql3 = mysql_query("SELECT COUNT(survivor_name) from  incident_report_details WHERE survivor_name IS NOT NULL");
+							$sql3 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='WTBC'");
 							$result3 = mysql_fetch_array($sql3);
 							
-							$sql4 = mysql_query("SELECT COUNT(cso_name) from  cso_details WHERE cso_name IS NOT NULL");
+								$sql33 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='DC'");
+							$result33 = mysql_fetch_array($sql33);
+							
+								$sql4 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='CNR'");
 							$result4 = mysql_fetch_array($sql4);
+							
+						
 							
 												?> 			
 									<tr class="record">
 									
 									
-									<td><div align="left"> New Notifications</div></td>
+									<td><div align="left"><img alt="New Notifications" src="img/not.png" title='New Notifications'>New Notifications </div></td>
 									<td><div align="left"><?php echo $result[0]; ?></div></td>
-									<td><div align="left"><a href="newincidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
+									<td><div align="left"><a href="newincidents.php?id='.$row['incident_report_id'].'" title="view Details">View all the <?php echo $result[0]; ?> New Notificitaion Details</a>  </div></td>
 									
 									</tr>
 									
 									<tr class="record">
 									
 									
-									<td><div align="left">Reported to Police</div></td>
+									<td><div align="left"><img alt="New Notifications" src="img/cot.png" title='New Notifications'>Do not want to be contacted</div></td>
 									<td><div align="left"><?php echo $result2[0]; ?></div></td>
 									<td><div align="left"><a href="policeincidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
 									
 									</tr>
 									
 									<tr class="record">
-									<td><div align="left">All Reported Incidences</div></td>
+									<td><div align="left"><img alt="New Notifications" src="img/wot.png" title='New Notifications'>Waiting to be contacted</div></td>
 									<td><div align="left"><?php echo $result3[0]; ?></div></td>
 									<td><div align="left"><a href="incidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
 									
 									</tr>
 								
 								<tr class="record">
-									<td><div align="left">Reported to NVDB</div></td>
-									<td><div align="left"><?php echo $result3[0]; ?></div></td>
+									<td><div align="left"><img alt="New Notifications" src="img/kot.png" title='New Notifications'>Directly Supported</div></td>
+									<td><div align="left"><?php echo $result33[0]; ?></div></td>
 									<td><div align="left"><a href="incidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
 									
 									</tr>
-								
 								<tr class="record">
-									<td><div align="left">CSO Active</div></td>
+									<td><div align="left"><img alt="New Notifications" src="img/pot.png" title='New Notifications'>Called and Refused</div></td>
+									<td><div align="left"><?php echo $result33[0]; ?></div></td>
+									<td><div align="left"><a href="incidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
+									
+									</tr>
+								<tr class="record">
+									<td><div align="left"><img alt="New Notifications" src="img/lot.png" title='New Notifications'>Active CSOs</div></td>
 									<td><div align="left"><?php echo $result4[0]; ?></div></td>
 									<td><div align="left"><a href="incidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
 									
 									</tr>
-									<tr class="record">
-									<td><div align="left">Survivors reached</div></td>
-									<td><div align="left"><?php echo $result4[0]; ?></div></td>
-									<td><div align="left"><a href="incidents.php?id='.$row['incident_report_id'].'" title="view Details">View the activity Details</a>  </div></td>
 									
-									</tr>
 							
 						</tbody>
 					</table>

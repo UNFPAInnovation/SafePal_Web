@@ -131,9 +131,9 @@
 
                 <ul class="dropdown">
 
-  <li><a  rel="facebox" href="reportingincidence.php">For myself</a></li>
+                    <li><a  rel="facebox" oncontextmenu="return false;" href="reportingincidence.php">For myself</a></li>
 
-                    <li><a rel="facebox" href="reportingincidencefrd.php">For a Friend</a></li>
+                    <li><a rel="facebox" oncontextmenu="return false;" href="reportingincidencefrd.php">For a Friend</a></li>
 
                     
                 </ul>

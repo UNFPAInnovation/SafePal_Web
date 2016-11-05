@@ -20,6 +20,12 @@
       })
     })
   </script>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -73,7 +79,7 @@
 					</li>
 					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage course units'>
+							<img alt="Statistics" src="img/re.png" title='manage incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
@@ -85,26 +91,26 @@
 					</li> 
 					<li>
 						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+							<img alt="Statistics" src="img/pr.png" title='view reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<img alt="Dashboard" src="img/cont.png" title='view summary'>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+													<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='view new notifications'>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="webreport.php">
+						<a href="settings.php">
 							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
@@ -120,18 +126,17 @@
 						<thead>
 							<tr>
 								<th>CSO Name</th>
-								<th>District</th>
-								<th> Village</th>
+								<th>Location</th>
 								<th> Phone No</th>
 								<th> Status </th>
 								
-								<th> Report </th>
 								<th> Action </th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php
 							include('connect.php');
+							$userid= $_SESSION['ID'];
 							$result = mysql_query("SELECT * FROM cso_details");
 							while($row = mysql_fetch_array($result))
 								{
@@ -139,13 +144,12 @@
 									
 									echo '<td><div align="left">'.$row['cso_name'].'</div></td>';
 									echo '<td><div align="left">'.$row['cso_location'].'</div></td>';
-									echo '<td><div align="left">'.$row['cso_location'].'</div></td>';
 									echo '<td><div align="left">'.$row['cso_phone_number'].'</div></td>';
-									echo '<td><div align="left">'.$row['user_id'].'</div></td>';
+									echo '<td><div align="left">'.$row['cso_email'].'</div></td>';
 								
 									
-									echo '<td><div align="center"><a href="print_pdf.php?dname='.$row['cso_name'].'" target="blank">Details</a> </div></td>';
-									echo '<td><div align="center"><a rel="facebox" href="editproductdetails.php?id='.$row['cso_details_id'].'">edit</a> | <a href="#" id="'.$row['cso_details_id'].'" class="delbutton" title="Click To Delete">delete</a></div></td>';
+									
+									echo '<td><div align="center"><a rel="facebox" href="editproductdetails.php?id='.$row['cso_details_id'].'">edit</a> | <a href="deletecso.php?id='.$row['cso_details_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 

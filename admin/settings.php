@@ -19,6 +19,12 @@
       })
     })
   </script>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -67,7 +73,7 @@
 					<li>
 						<a href="levels.php">
 							<img alt="Statistics" src="img/add.png" title='add user levels'>
-							<span>Levels</span>
+							<span>User Groups</span>
 						</a>
 					</li>
 					<li>
@@ -91,55 +97,50 @@
 					<li>
 						<a href="followup.php">
 							<img alt="Dashboard" src="img/cont.png" title='view current contracts'>
-							<span>Incident followup</span>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view and delete visitors comments.these may also be orders'>
-							<span>Notifications</span>
+										<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="profile.php">
+						<a href="settings.php">
 							<img alt="Articles" src="img/m-articles.png">
-							<span>My profile</span>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
 					<div class="clearfix"></div>
 				</ul>
-					<div class="clearfix"></div>
-				</ul>
-				
 				<div id="content" class="clearfix">
-					<label for="filter">Expert Filter</label> <input type="text" name="filter" value="" id="filter" />
-				<a href="viewload.php">View CSO Load</a> &nbsp;&nbsp;<a href="viewstaffload.php">View CSO Load Report</a>
+					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
+					<a rel="facebox" href="addloc.php">Add Location</a> &nbsp;&nbsp;&nbsp;
+					<a href="settings.php">View Locations</a>&nbsp;&nbsp;&nbsp;
+					<a rel="facebox" href="addincidencestatus.php">Add Incidence Status</a>&nbsp;&nbsp;&nbsp;
+					<a rel="facebox" href="adduser.php">View Incidence Status</a>
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
-							<tr>
-								<th>CSO Name</th>
-								<th> District</th>
-								<th> Village</th>
-								<th> Assign to a survivor </th>
-								
-							</tr>
+												<tr>
+								<th> Location </th>
+								<th>Location decsription </th>
+								<th> Actions </th>
+								</tr>
 						</thead>
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM lecturers");
+							$result = mysql_query("SELECT * FROM locations");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
 									
-									echo '<td><div align="left">'.$row['tittle'].'</div></td>';
-									echo '<td><div align="left">'.$row['fname'].'</div></td>';
-									echo '<td><div align="left">'.$row['department'].'</div></td>';
-									
-									
-									
-									echo '<td><div align="left"><a rel="facebox" href="assign.php?id='.$row['ID'].'">Assign A  survivor</a> | <a href="#" id="'.$row['ID'].'" class="delbutton" title="Click To Delete">Un Assign a  survivor</a></div></td>';
+									echo '<td><div align="left">'.$row['loc_name'].'</div></td>';
+									echo '<td><div align="left">'.$row['des'].'</div></td>';
+																	
+									echo '<td><div align="center"><a rel="facebox" href="editlevel.php?id='.$row['loc_id'].'">edit</a> | <a href="deletelevel.php?id='.$row['loc_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 
@@ -148,7 +149,7 @@
 				</div>
 				<div id="footer" class="radius-bottom">
 					2016 ©
-					<a class="afooter-link" href="">Admin Panel - SafePal</a>
+					<a class="afooter-link" href="">Admin Panel - Safe Pal</a>
 					by
 					<a class="afooter-link" href="">UNFPA</a>
 				</div>

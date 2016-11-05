@@ -23,6 +23,12 @@ $staff = $_SESSION['Admin'];
       })
     })
   </script>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -95,19 +101,19 @@ $staff = $_SESSION['Admin'];
 					<li>
 						<a href="followup.php">
 							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+											<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='view new incidents'>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="webreport.php">
+						<a href="settings.php">
 							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>

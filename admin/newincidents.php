@@ -20,6 +20,12 @@
     })
   </script>
   <html>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 	
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
@@ -72,7 +78,7 @@
 					</li>
 					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage course units'>
+							<img alt="Statistics" src="img/re.png" title='manage incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
@@ -84,26 +90,26 @@
 					</li> 
 					<li>
 						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+							<img alt="Statistics" src="img/pr.png" title='view reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<img alt="Dashboard" src="img/cont.png" title='view summary'>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
+						<a href="newincidents.php">
 							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="webreport.php">
+						<a href="settings.php.php">
 							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
