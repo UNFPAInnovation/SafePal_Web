@@ -56,7 +56,7 @@
 <body>
 <div id="wrapper">
 	<div id="header">
-    <h1><a href="login.php"><img src="xres/images/logoa.png" class="logo" alt="Part timers track" style="margin-left:3.7%" /></a></h1>
+    <h1><a href="login.php"><img src="xres/images/logoa.png" class="logo" alt="SafePal" style="margin-left:3.7%" /></a></h1>
         <ul id="mainnav">
 	   
 		

@@ -78,33 +78,22 @@ height: 34px;
   <option value="Female">Between 10 - 24</option>
    <option value="Female">Above 24</option>
      </td> </tr>
-	 <tr><td>My Friend is a:<select name="sex" class="ed">
+	 <tr><td>Victim's Sex:<select name="sex" class="ed">
  <option value="Male">Boy</option>
   <option value="Female">Girl</option>
      </td> </tr>
   <tr>
-<td>What happened to your freind:<select name="whathappened" class="ed" >
+<td>What happened to your him/her:<select name="whathappened" class="ed" >
  <option value="Male">Bad Touches</option>
-  <option value="Female">Some one tried to rape my friend</option>
-   <option value="Female">My friend raped</option>
-    <option value="Female">My friend was defiled</option>
+  <option value="Female">Some one tried to rape him/her</option>
+   <option value="Female">He/She was raped</option>
+    <option value="Female">He/She was defiled</option>
 	 <option value="Female">Other</option>
   </select></td> </tr>
    <tr> <td>Tell us the story:<textarea name="story" class="ed">
 </textarea></td>
   </tr>
-<tr><td>Do you want to be contcated:<select name="cont" class="ed">
- <option value="Male">Yes</option>
-  <option value="Female">No</option>
-  </td> </tr>
-<tr><td>If Yes give us number:<input name="name" type="text" class="ed"  size="23px"/></td> </tr>
-<tr><td>And your location:<select name="sex" class="ed" >
- <option value="Male">Mbarara</option>
-  <option value="Female">Kampala</option>
-   <option value="Female">Bushenyi</option>
-    <option value="Female">Ishaka</option>
-	 <option value="Female">Other</option>
-  </select></td> </tr>
+
 <tr><td><input type="submit" name="Submit" value="Report incidence" id="button1" /></td></tr>
      
  </table>
