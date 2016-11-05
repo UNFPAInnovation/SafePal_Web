@@ -1,64 +1,33 @@
 
-<script type="text/javascript">
-function validateForm()
-{
-var a=document.forms["name"]["name"].value;
-if (a==null || a=="")
-  {
-  alert("Pls. Enter  name");
-  return false;
-  }
-var b=document.forms["sex"]["sex"].value;
-if (b==null || b=="")
-  {
-  alert("Pls. Enter sex");
-  return false;
-  }
-}
-</script>
 
-<style type="text/css">
-<!--
-.ed{
-border-style:solid;
-border-width:thin;
-border-color:#00CCFF;
-padding:5px;
-margin-bottom: 4px;
-}
-#button1{
-text-align:center;
-font-family:Arial, Helvetica, sans-serif;
-border-style:solid;
-border-width:thin;
-border-color:#00CCFF;
-padding:5px;
-background-color:#00CCFF;
-height: 34px;
-}
--->
-</style>
+<!--sa poip up-->
+<link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+   <script src="admin/lib/jquery.js" type="text/javascript"></script>
+  <script src="admin/src/report/facebox.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox2]').facebox({
+        loadingImage : 'src/loading.gif',
+        closeImage   : 'src/closelabel.png'
+      })
+    })
+  </script>
 
-<form action="addexec5.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
 
-<a href="">Welcome to the instant web reporter</a><br />
+
+
+<p align="center" color="blue"><strong align="right">SafePal web Reporter</strong></p>
 <table>
-<tr><td>Survivor's Name:<input name="name" type="text" class="ed" /></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>Gender:<br><select name="sex" class="ed">
- <option value="Male">Male</option>
-  <option value="Female">Female</option>
-  </select></td></tr>
-<tr><td>Phone:<input name="phone" type="text" class="ed" /></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>Email:<input name="email" type="text" class="ed" /></td></tr>
-<tr><td>Birth date:<input name="bot" type="text" class="ed" /></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>Age:  <input name="age" type="text" class="ed" /></td></tr>
-<tr><td>Location:<input name="loc" type="text" class="ed" /></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>Incident reported by: <select name="reporter" class="ed">
- <option value="Survivor">Survivor</option>
-  <option value="Victim">Friend</option>
-  </select></td></tr>
-<tr><td>Incidence Description:<textarea name="des" class="ed">
-</textarea></td></tr>
-<tr><td>Perpetrator relationship:<input name="rel" type="text" class="ed" /></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>Number of perpetrators: <input name="nop" type="text" class="ed" /></td></tr>
-<tr><td>Perpetrator's name: <input name="pname" type="text" class="ed" /></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>Perpetrator'sestimated age: <input name="page" type="text" class="ed" /></td></tr>
 
-<tr><td><input type="submit" name="Submit" value="Report incidence" id="button1" /></td></tr>
+					<div class="events_content">Know that the sexual violence wasn't your fault</div>
+							<div class="events_content">You do not have to protect the perpetrator</div></div>
+							<div class="events_content">It is critical that you seek medical care</a></div>
+					 		<div class="events_content">40% of rape survivors develop sexually transmitted diseases as a result of sexual assault
+					        </div></div>
+					
+
+<tr><td><a rel="facebox2" href="reportingincidenceformyself.php"><img alt="Statistics" src="images/report.jpg" title='manage user levels'><span>Click on the image to proceed and Report</span></a></td></tr>
+
      
  </table>
-</form>
+
