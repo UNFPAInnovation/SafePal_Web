@@ -1,9 +1,9 @@
 <?php
 	require_once('../auth.php');
 
-if(isset($_SESSION['Admin'])!='' && isset($_SESSION['password'])!='')
+if(isset($_SESSION['CSO'])!='' && isset($_SESSION['password'])!='')
 {
-$staff = $_SESSION['Admin'];
+$staff = $_SESSION['CSO'];
 ?>
 <html>
 <head>
@@ -23,6 +23,12 @@ $staff = $_SESSION['Admin'];
       })
     })
   </script>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -42,7 +48,7 @@ $staff = $_SESSION['Admin'];
 					</a>
 					<div class="tcenter" style="margin-left:-20%">
 					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a class="alightred" href="../index.php">Logout</a>
@@ -67,13 +73,7 @@ $staff = $_SESSION['Admin'];
 						</a>
 					</li>
 					
-					
-					<li>
-						<a href="levels.php">
-							<img alt="Statistics" src="img/add.png" title='manage user levels'>
-							<span>User Groups</span>
-						</a>
-					</li>
+				
 					<li>
 						<a href="incidents.php">
 							<img alt="Statistics" src="img/re.png" title='manage course units'>
@@ -95,22 +95,16 @@ $staff = $_SESSION['Admin'];
 					<li>
 						<a href="followup.php">
 							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
+											<a href="notifications.php">
 							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
-					<li>
-						<a href="webreport.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
-							<span class="submenu-arrow"></span>
-						</a>
-					</li>
+				
 					
 					<div class="clearfix"></div>
 				</ul>
@@ -193,7 +187,7 @@ $staff = $_SESSION['Admin'];
 				</div>
 				<div id="footer" class="radius-bottom">
 					2016 ©
-					<a class="afooter-link" href="">Admin Panel - Safe Pal</a>
+					<a class="afooter-link" href="">COS Web Panel - Safe Pal</a>
 					by
 					<a class="afooter-link" href="">UNFPA</a>
 				</div>

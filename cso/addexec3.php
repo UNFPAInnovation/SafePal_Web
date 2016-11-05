@@ -2,17 +2,17 @@
 include('connect.php');
 
 
-			$fname=$_POST['fname'];
-			$uname=$_POST['uname'];
-			$password=$_POST['password'];
-			$level=$_POST['level'];
+			$name=$_POST['name'];
+			$dist=$_POST['dist'];
+			$phone=$_POST['phone'];
+			$status=$_POST['status'];
 			
 
 			
-$update=mysql_query("INSERT INTO users ( fullname ,username, password,user_categories_user_category_id)
+$update=mysql_query("INSERT INTO cso_details(cso_name,cso_location,cso_phone_number,cso_email)
 VALUES
-('$fname','$uname','$password','$level')");
-header("location: user.php");
+('$name','$dist','$phone','$status')");
+header("location: cso.php");
 			exit();
 		
 

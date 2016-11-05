@@ -20,6 +20,12 @@
     })
   </script>
   <html>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
@@ -91,19 +97,19 @@
 					<li>
 						<a href="followup.php">
 							<img alt="Dashboard" src="img/cont.png" title='view current contracts'>
-							<span>Incident followup</span>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
 						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view and delete visitors comments.these may also be orders'>
-							<span>Notifications</span>
+							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
 					<li>
-						<a href="webreport.php">
+						<a href="settings.php">
 							<img alt="Articles" src="img/m-articles.png">
-							<span>ReportIncidence</span>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
@@ -131,7 +137,7 @@
 									echo '<td><div align="left">'.$row['user_category'].'</div></td>';
 									echo '<td><div align="left">'.$row['des'].'</div></td>';
 									
-									echo '<td><div align="center"><a rel="facebox" href="editlevel.php?id='.$row['user_category_id'].'">edit</a> | <a href="deletelevel.php?id='.$row['user_category_id'].'" class="delbutton" title="Click To Delete">delete</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="editlevel.php?id='.$row['user_category_id'].'">edit</a> | <a href="deletelevel.php?id='.$row['user_category_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 

@@ -20,6 +20,12 @@
     })
   </script>
   <html>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 	
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
@@ -38,7 +44,7 @@
 					</a>
 					<div class="tcenter" style="margin-left:-20%">
 					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a class="alightred" href="../index.php">Logout</a>
@@ -57,22 +63,16 @@
 					</li>
 					<li>
 						<a href="user.php">
-							<img alt="Users" src="img/m-users.png" title='manage users'>
-							<span>Users</span>
+							<img alt="Users" src="img/m-users.png" title='manage your profile'>
+							<span>Profile</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
 					
 					
 					<li>
-						<a href="levels.php">
-							<img alt="Statistics" src="img/add.png" title='manage user levels'>
-							<span>User Groups</span>
-						</a>
-					</li>
-					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage course units'>
+							<img alt="Statistics" src="img/re.png" title='manage incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
@@ -84,29 +84,23 @@
 					</li> 
 					<li>
 						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+							<img alt="Statistics" src="img/pr.png" title='view reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<img alt="Dashboard" src="img/cont.png" title='view suammry'>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+											<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='view new notifications'>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
-					<li>
-						<a href="webreport.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
-							<span class="submenu-arrow"></span>
-						</a>
-					</li>
+				
 					<div class="clearfix"></div>
 				</ul>
 				<div id="content" class="clearfix">
@@ -123,9 +117,7 @@
 								<th> Date</th>
 								<th> Status</th>
 								<th> Feedback after follow up</th>
-													
-								<th> Authority</th>
-								<th> ToDo Actions </th>
+							
 								
 							</tr>
 						</thead>
@@ -146,9 +138,9 @@
 									echo '<td><div align="left">'.$row['incident_date_and_time'].'</div></td>';
 									echo '<td><div align="left">'.$row['status'].'</div></td>';
 									echo '<td><div align="left">'.$row['feedback'].'</div></td>';
-									echo '<td><div align="left">'.$row['authority'].'</div></td>';
 									
-									echo '<td><div align="center"><a rel="facebox" href="letspush.php?id='.$row['incident_report_id'].'">Followup</a>| <a rel="facebox" href="pushnow.php?id='.$row['incident_report_id'].'" title="Click to Report">Push</a></div></td>';
+									
+									
 									echo '</tr>';
 								}
 							?> 
@@ -157,7 +149,7 @@
 				</div>
 				<div id="footer" class="radius-bottom">
 					2016 ©
-					<a class="afooter-link" href="">Admin Panel - SafePal</a>
+					<a class="afooter-link" href="">CSO Web Panel - SafePal</a>
 					by
 					<a class="afooter-link" href="">UNFPA</a>
 				</div>

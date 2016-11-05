@@ -21,6 +21,12 @@
   </script>
   <html>
   <head>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
@@ -37,8 +43,9 @@
 					<img width="36" height="36" alt="avatar" src="img/avatar.jpg">
 					</a>
 					<div class="tcenter" style="margin-left:-20%">
+					
 					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a class="alightred" href="../index.php">Logout</a>
@@ -57,22 +64,16 @@
 					</li>
 					<li>
 						<a href="user.php">
-							<img alt="Users" src="img/m-users.png" title='manage users'>
-							<span>Users</span>
+							<img alt="Users" src="img/m-users.png" title='manage your profile'>
+							<span>Profile</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
 					
 					
 					<li>
-						<a href="levels.php">
-							<img alt="Statistics" src="img/add.png" title='manage user levels'>
-							<span>User Groups</span>
-						</a>
-					</li>
-					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage course units'>
+							<img alt="Statistics" src="img/re.png" title='manage incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
@@ -84,35 +85,29 @@
 					</li> 
 					<li>
 						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+							<img alt="Statistics" src="img/pr.png" title='view reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<img alt="Dashboard" src="img/cont.png" title='view summary'>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+						<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='view new incidents'>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
-					<li>
-						<a href="webreport.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
-							<span class="submenu-arrow"></span>
-						</a>
-					</li>
+				
 					
 					<div class="clearfix"></div>
 				</ul>
 			<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a rel="facebox" href="adduser.php">Add user</a>
+					<a href="">Use the edit link to Edit your profile</a>
 									<div id="content" class="clearfix">
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
@@ -128,8 +123,10 @@
 						<tbody>
 						<?php
 							include('connect.php');
+							
 							$userid= $_SESSION['ID'];
-							$result = mysql_query("SELECT * FROM users");
+							$fullname= $_SESSION['fname'];
+							$result = mysql_query("SELECT * FROM users where  fullname='$fullname'");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
@@ -137,7 +134,7 @@
 									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['username'].'</td>';
 									echo'<td><div align="left">'.$row['user_categories_user_category_id'].'</div></td>';
 								
-									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['user_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['user_id'].'" class="delbutton" title="Click To Delete">delete</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['user_id'].'">edit</a></div></td>';
 									echo '</tr>';
 								}
 							?> 
@@ -146,7 +143,7 @@
 				</div>
 				<div id="footer" class="radius-bottom">
 					2016 ©
-					<a class="afooter-link" href="">Admin Panel - Safe Pal</a>
+					<a class="afooter-link" href="">CSO Web Panel - Safe Pal</a>
 					by
 					<a class="afooter-link" href="">UNFPA</a>
 				</div>

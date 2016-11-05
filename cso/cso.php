@@ -20,6 +20,12 @@
       })
     })
   </script>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -39,7 +45,7 @@
 					</a>
 					<div class="tcenter" style="margin-left:-20%">
 					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a class="alightred" href="../index.php">Logout</a>
@@ -66,12 +72,6 @@
 					
 					
 					<li>
-						<a href="levels.php">
-							<img alt="Statistics" src="img/add.png" title='manage user levels'>
-							<span>User Groups</span>
-						</a>
-					</li>
-					<li>
 						<a href="incidents.php">
 							<img alt="Statistics" src="img/re.png" title='manage course units'>
 							<span>Incidents</span>
@@ -92,22 +92,16 @@
 					<li>
 						<a href="followup.php">
 							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<span>Incident Summary</span>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
+													<a href="newincidents.php">
 							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
 						</a>
 					</li> 
-					<li>
-						<a href="webreport.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>ReportIncidence</span>
-							<span class="submenu-arrow"></span>
-						</a>
-					</li>
+				
 					<div class="clearfix"></div>
 				</ul>
 					<div class="clearfix"></div>
@@ -115,23 +109,21 @@
 				
 				<div id="content" class="clearfix">
 					<label for="filter">Expert Filter</label> <input type="text" name="filter" value="" id="filter" />
-				<a rel="facebox" href="addcso.php">Add New CSO</a>
+				<a href="">These are the available CSOs registered on SafePal</a>
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 							<tr>
 								<th>CSO Name</th>
-								<th>District</th>
-								<th> Village</th>
+								<th>Location</th>
 								<th> Phone No</th>
 								<th> Status </th>
 								
-								<th> Report </th>
-								<th> Action </th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php
 							include('connect.php');
+							$userid= $_SESSION['ID'];
 							$result = mysql_query("SELECT * FROM cso_details");
 							while($row = mysql_fetch_array($result))
 								{
@@ -139,14 +131,12 @@
 									
 									echo '<td><div align="left">'.$row['cso_name'].'</div></td>';
 									echo '<td><div align="left">'.$row['cso_location'].'</div></td>';
-									echo '<td><div align="left">'.$row['cso_location'].'</div></td>';
 									echo '<td><div align="left">'.$row['cso_phone_number'].'</div></td>';
-									echo '<td><div align="left">'.$row['user_id'].'</div></td>';
+									echo '<td><div align="left">'.$row['cso_email'].'</div></td>';
 								
 									
-									echo '<td><div align="center"><a href="print_pdf.php?dname='.$row['cso_name'].'" target="blank">Details</a> </div></td>';
-									echo '<td><div align="center"><a rel="facebox" href="editproductdetails.php?id='.$row['cso_details_id'].'">edit</a> | <a href="#" id="'.$row['cso_details_id'].'" class="delbutton" title="Click To Delete">delete</a></div></td>';
-									echo '</tr>';
+									
+									
 								}
 							?> 
 						</tbody>
@@ -154,7 +144,7 @@
 				</div>
 				<div id="footer" class="radius-bottom">
 					2016 ©
-					<a class="afooter-link" href="">Admin Panel - SafePal</a>
+					<a class="afooter-link" href="">CSO Web Panel - SafePal</a>
 					by
 					<a class="afooter-link" href="">UNFPA</a>
 				</div>

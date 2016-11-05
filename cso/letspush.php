@@ -27,7 +27,7 @@ height: 34px;
 			{
 			
 				$name=$row['survivor_name'];
-				
+				$incident_report_id=$row['incident_report_id'];
 				$phone=$row['survivor_contact_phone_number'];
 				$email=$row['survivor_contact_email'];
 				$des=$row['incident_description'];
@@ -37,29 +37,37 @@ height: 34px;
 			}
 ?>
 <form action="reportcase.php" method="post">
-	<input type="hidden" name="prodid" value="<?php echo $id=$_GET['id'] ?>">
-	Name:<br><input type="text" name="name" value="<?php echo $name ?>" readonly class="ed" ><br>
+	<input type="hidden" name="incident_report_id" value="<?php echo $incident_report_id ?>">
+	Name:<br><input type="text" name="name" value="<?php echo $name ?>"  class="ed" ><br>
 	
-	Phone:<br><input type="text" name="phone" value="<?php echo $phone ?>" readonly class="ed"><br>
-	Email:<br><input type="text" name="email" value="<?php echo $email?>" readonly class="ed"><br>
+	Contact:<br><input type="text" name="phone" value="<?php echo $phone ?>" class="ed"><br>
+	Location<br>     <select name="email" class="ed">
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from locations");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['loc_name']?>"><?php echo $row['loc_name']?></option>
+			<?php 
+			}			
+			?>
+			</select><br />
 	Description:<br><textarea name="des" class="ed" ><?php echo $des?></textarea><br>
    
 	Feedback after follow up:<br><textarea name="feedback"> </textarea><br>
-  Staus:<br><select name="status">
-	<option>Contacted</option>
-	<option>Not Contacted</option>
-	<option>Contacted and Helped</option>
-	<option>New</option>
-	<option>Pushed</option>
-	<option>Need later followup</option>
+  Staus:<br>
+  
+     <select name="status" class="ed">
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from incidence_status");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['status_name']?>"><?php echo $row['status_name']?></option>
+			<?php 
+			}			
+			?>
+			</select><br />
 	
-	</select><br /><br>
-	Authority:<br><select name="authority">
-	<option>Not Reported</option>
-	<option>N/A</option>
-	<option>Police</option>
-	<option>NVBD</option>
+	<br /><br>
 	
-	</select><br /><br>
 	<input type="submit" value="Update" id="button1">
 </form>
