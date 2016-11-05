@@ -55,23 +55,23 @@ height: 34px;
 -->
 </style>
 
-<form action="addexec5.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
+<form action="backtohome.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
 
-<a href="">Welcome to the instant Web reporter</a><br />
+<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
 
-<tr><td>How can we contact you:<select name="contacted" class="ed">
- <option value="Yes">Phone</option>
-  <option value="No">Email</option>
-  </td> </tr>
-<tr><td>What are you Contact details:<input name="pnumber" type="text" class="ed"  size="28px"/></td> </tr>
-<tr><td>Where are yourlocation:<select name="location" class="ed" >
- <option value="Mbarara">Mbarara</option>
-  <option value="Kampala">Kampala</option>
-   <option value="Busheny">Bushenyi</option>
-    <option value="Ishaka">Ishaka</option>
-	 <option value="Other">Other</option>
-  </select></td> </tr>
+<tr><td>Phone number:<input name="pnumber" type="text" class="ed"  size="28px"/></td> </tr>
+<tr><td>Email address:<input name="pnumber" type="text" class="ed"  size="28px"/></td> </tr>
+<tr><td>Select Your location:<select name="location" class="ed">
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from locations");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['loc_name']?>"><?php echo $row['loc_name']?></option>
+			<?php 
+			}			
+			?>
+			</select></td> </tr>
 
 <tr><td><input type="submit" name="Submit" value="Submit" id="button1" /></td></tr>
      

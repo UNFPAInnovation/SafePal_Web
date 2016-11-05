@@ -120,17 +120,19 @@
  
 					</div>
 </div>
-					 <ul>
+						
+				 <ul>
             <div style="margin-top: -70px;">
-                      <li class="active">
+           
+            <li class="active">
 
                 <a href="#">Report an Incidence &#9662;</a>
 
                 <ul class="dropdown">
 
-  <li><a  rel="facebox" href="reportingincidence.php">For myself</a></li>
+                    <li><a  rel="facebox" oncontextmenu="return false;" href="reportingincidence.php">For myself</a></li>
 
-                    <li><a rel="facebox" href="reportingincidencefrd.php">For a Friend</a></li>
+                    <li><a rel="facebox" oncontextmenu="return false;" href="reportingincidencefrd.php">For a Friend</a></li>
 
                     
                 </ul>

@@ -16,7 +16,7 @@
 
 
 
-<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
+<a href="">Reassuring messages</a><br />
 <table>
 
 					<div class="events_content">Know that the sexual violence wasn't your fault</div>
@@ -26,7 +26,7 @@
 					        </div></div>
 					
 
-<tr><td><a rel="facebox2" href="reportingincidenceformyself.php"><u><img alt="Statistics" src="images/report2.png" title='click to report incident'><span>Click here or logo to continue</span></a></u></td></tr>
+<tr><td><a rel="facebox2" href="reportingincidenceformyself.php">submited<span>Click on the image to proceed and Report</span></a></td></tr>
 
      
  </table>

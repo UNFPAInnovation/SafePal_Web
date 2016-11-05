@@ -122,18 +122,19 @@
 				
 						
 				
+				
 				 <ul>
             <div style="margin-top: -70px;">
-    
+           
             <li class="active">
 
                 <a href="#">Report an Incidence &#9662;</a>
 
                 <ul class="dropdown">
 
-                    <li><a  rel="facebox" href="message.php">For myself</a></li>
+                    <li><a  rel="facebox" href="reportingincidence.php">For myself</a></li>
 
-                    <li><a rel="facebox" href="messagetoFriend.php">For a Friend</a></li>
+                    <li><a rel="facebox" href="reportingincidencefrd.php">For a Friend</a></li>
 
                     
                 </ul>
@@ -170,17 +171,14 @@ style="position:relative;width:180px;height:80px;float:right;"> </a>
 
 			<!-- Extra -->
 			<div id="marketing" class="container" style="margin-top: -5%;color:#D71D5B;size:150px";align="center">
+				<p align="center" > <strong align="right" style="color:red;"><font size="6">Thank you very much, the incident has been Recorded.</font> </strong></p>
+			
+				<p align="center" style="color:red;"><strong align="right">Do you wish to be contacted?.</strong></p>
 				
-					
-							<p class="subtitle" style="color:#D71D5B"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							Thank you very much, Your incidence has been Recorded. Dou you wish to be contacted.
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <a rel="facebox" href="contactincidence.php">YES</a>
-							 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-							 <a rel="facebox" href="no.php">NO</a>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
-							 <a href="index.php">Go back to Home page</a>
-							</p>
+					<p align="center" style="color:blue;"><strong align="right"> <a rel="facebox" href="contactincidence.php">YES</a> &nbsp;&nbsp;
+					<a rel="facebox" href="no.php">NO</a> &nbsp;&nbsp;
+					<a href="index.php">Go back to Home page</a></strong></p>
+													 
 
 			</div>
 			<!-- /Extra -->
@@ -203,7 +201,7 @@ style="position:relative;width:180px;height:80px;float:right;"> </a>
 
 	<!-- Copyright -->
 		<div id="copyright" class="container">
-Copyright	@ <a href="http://safepal.com">SafePal Designers : <br><a href="login.php">login into Safe Pal</a></a> 
+Copyright	@ <a href="http://safepal.com">SafePal Designers : 
 	</div>
 
 

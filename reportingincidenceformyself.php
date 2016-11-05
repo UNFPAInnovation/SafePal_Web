@@ -31,7 +31,7 @@ require('./calendar/tc_calendar.php');
 <!--sa poip up-->
 <link href="admin/src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
    <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  <script src="admin/src/facebox.js" type="text/javascript"></script>
+  
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
@@ -64,7 +64,7 @@ height: 34px;
 
 <form action="addexec5.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
 
-<a href="">Welcome to the instant Web reporter</a><br />
+<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
 		  <tr><td>When is your birthday:<?php
 		 
@@ -86,11 +86,11 @@ height: 34px;
 		  ?></td> </tr>
 		  <tr><td>What is your estimated age (**):<input name="age" type="text" class="ed" size="23px"/></td>
   </tr>
-<tr><td>Are you a Boy or Girl:<select name="sex" class="ed">
+<tr><td>Are you a Boy or Girl:&nbsp; &nbsp; <select name="sex" class="ed">
  <option value="Male">Boy</option>
   <option value="Female">Girl</option></td> </tr>
 
-<tr><td>Where did it happen:<input name="place" type="text" class="ed" size="23px"/></td>
+<tr><td>In what location did the incident happen?:<input name="place" type="text" class="ed" size="23px"/></td>
   </tr>
 
   <tr>

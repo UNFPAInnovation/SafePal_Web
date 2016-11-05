@@ -44,6 +44,7 @@
 	$_SESSION['CSO']= $user;
 	$_SESSION['password'] = $password;
 	$_SESSION['fname'] = $row['fullname'];
+	$_SESSION['loc'] = $row['location'];
 	$_SESSION['ID'] = $row['user_id'];
 	$_SESSION['username'] = $row['username'];	
 	$_SESSION['usergroup'] = $row['user_categories_user_category_id'];	

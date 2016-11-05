@@ -57,7 +57,7 @@ height: 34px;
 
 <form action="addexec5.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
 
-<a href="">Welcome to the instant Web reporter</a><br />
+<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
 		
 

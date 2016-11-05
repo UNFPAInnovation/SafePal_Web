@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>SafePal-v1</title>
+		<title>SafePal</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
 		
@@ -16,7 +16,7 @@
    <script src="admin/lib/jquery.js" type="text/javascript"></script>
   <script src="admin/src/report/facebox.js" type="text/javascript"></script>
   <script type="text/javascript">
-    jQuery(document).ready(function($){
+    jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
         loadingImage : 'src/loading.gif',
         closeImage   : 'src/closelabel.png'
@@ -123,7 +123,7 @@
 						
 				
 				 <ul>
-            <div style="margin-top: -70px">
+            <div style="margin-top: -70px;">
            
             <li class="active">
 
