@@ -2,50 +2,26 @@
 <script type="text/javascript">
 function validateForm()
 {
-var a=document.forms["age"]["age"].value;
+var a=document.forms["addincidence"]["age"].value;
 if (a==null || a=="")
   {
   alert("Pls. Enter  your age");
   return false;
   }
-var b=document.forms["sex"]["sex"].value;
-if (b==null || b=="")
-  {
-  alert("Pls. Enter sex");
-  return false;
-  }
-  var c=document.forms["place"]["place"].value;
+var c=document.forms["addincidence"]["place"].value;
 if (c==null || c=="")
   {
   alert("Pls. Enter place of incidence");
   return false;
   }
-  var d=document.forms["whathappened"]["whathappened"].value;
-if (d==null || d=="")
-  {
-  alert("Pls. Enter what happened");
-  return false;
-  }
-  var e=document.forms["story"]["story"].value;
+  var e=document.forms["addincidence"]["story"].value;
 if (e==null || e=="")
   {
   alert("Pls. Briefly Tell us the story");
   return false;
   }
-  
-  var b=document.forms["sex"]["sex"].value;
-if (b==null || b=="")
-  {
-  alert("Pls. Enter sex");
-  return false;
-  }
-  var b=document.forms["sex"]["sex"].value;
-if (b==null || b=="")
-  {
-  alert("Pls. Enter sex");
-  return false;
-  }
 }
+  </script>
 <link href="./calendar/css/default/calendar.css" rel="stylesheet" type="text/css" />
 <?php
 // Load the calendar class
