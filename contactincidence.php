@@ -55,7 +55,7 @@ height: 34px;
 -->
 </style>
 
-<form action="backtohome.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
+<form action="finalsubmit.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
 
 <p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
