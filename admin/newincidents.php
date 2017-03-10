@@ -120,7 +120,7 @@
 				</ul>
 				<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a href="">Report an Incidence</a>
+				
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 							<tr>
@@ -128,7 +128,7 @@
 								<th> Name </th>
 								<th> Sex</th>
 								<th> Age </th>
-								<th> Reporter </th>
+								<th> Incidence </th>
 								<th> District</th>
 								<th> Village</th>
 								<th> Details </th>
@@ -143,11 +143,11 @@
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM incident_report_details where status='New'");
+							$result = mysql_query("SELECT * FROM incident_report_details where status='New' ORDER BY incident_report_id DESC ");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
-										echo '<td><div align="left">SFPINC'.$row['incident_report_id'].'</div></td>';
+										echo '<td><div align="left">SW'.$row['incident_report_id'].'</div></td>';
 										echo '<td><div align="left">'.$row['survivor_name'].'</div></td>';
 									echo '<td><div align="left">'.$row['survivor_gender'].'</div></td>';
 									echo '<td><div align="left">'.$row['perpetrator_estimated_age'].'</div></td>'; 

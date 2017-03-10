@@ -137,7 +137,7 @@
 							
 							$userid= $_SESSION['ID'];
 							$loged= $_SESSION['fname'];
-							$result = mysql_query("SELECT * FROM users WHERE ");
+							$result = mysql_query("SELECT * FROM users WHERE fullname='$loged'");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';

@@ -88,7 +88,7 @@ height: 34px;
   <option value="Female">Girl</option></td> </tr>
 
 <tr><td>In what location did the incident happen?:&nbsp;&nbsp;
- <select name="dist" class="ed" >
+ <select name="place" class="ed" >
 			<?php
 			include('connect.php');
 			$result = mysql_query("SELECT * from locations");
