@@ -10,7 +10,7 @@
 <!--sa poip up-->
 <link href="src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
    <script src="lib/jquery.js" type="text/javascript"></script>
-  <script src="src/details/facebox.js" type="text/javascript"></script>
+  <script src="src/facebox.js" type="text/javascript"></script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
@@ -38,18 +38,7 @@
 		<div id="adminbar-outer" class="radius-bottom">
 			<div id="adminbar" class="radius-bottom" style="margin-top:0.9%">
 				<a id="logo" href="dashboard.php"></a>
-				<div id="details">
-					<a class="avatar" href="javascript: void(0)">
-					<img width="36" height="36" alt="avatar" src="img/avatar.jpg">
-					</a>
-					<div class="tcenter" style="margin-left:-20%">
-					Hi
-					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
-					!
-					<br>
-					<a class="alightred" href="../index.php">Logout</a>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 		<div id="panel-outer" class="radius" style="opacity: 1" style="margin-top:10%">
@@ -63,15 +52,22 @@
 					</li>
 					<li>
 						<a href="user.php">
-							<img alt="Users" src="img/m-users.png" title='manage your profile'>
-							<span>Profile</span>
+							<img alt="Users" src="img/m-users.png" title='manage users'>
+							<span>Users</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
 					
-										<li>
+					
+					<li>
+						<a href="levels.php">
+							<img alt="Statistics" src="img/add.png" title='manage user levels'>
+							<span>User Groups</span>
+						</a>
+					</li>
+					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage incidents'>
+							<img alt="Statistics" src="img/re.png" title='manage Reported Incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
@@ -82,29 +78,49 @@
 						</a>
 					</li> 
 					<li>
-						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view reports'>
+						<a href="reports.php">
+							<img alt="Statistics" src="img/pr.png" title='Generate Reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view summary'>
-							<span>Incident Summary</span>
+							<img alt="Dashboard" src="img/cont.png" title='view Summary'>
+							<font  size="1px"><span>Followup Summary</span></font>
 						</a>
 					</li>
 					<li>
 						<a href="newincidents.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view new incidents'>
-							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
+							<img alt="Newsletter" src="img/m-newsletter.png" title='View New Incidents'>
+							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>New Incidents</span>
 						</a>
 					</li> 
+					<li>
+						<a href="settings.php">
+							<img alt="Articles" src="img/m-articles.png" title='System Settings'>
+							<span>Settings</span>
+							<span class="submenu-arrow"></span>
+						</a>
+					</li>
 					
+					<div id="details">
+					
+					<div class="tcenter" style="margin-left:-20%">
+					Hi
+					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					!
+					<br>
+					<a href="../login.php">Logout</a>
+					</div>
+				</div>
+					
+					<div class="clearfix"></div>
+				</ul>
 					<div class="clearfix"></div>
 				</ul>
 				<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a rel="facebox" href="reportingincidenceforfriend.php">Report an Incidence for a friend</a>
+					
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 							<tr>
@@ -152,7 +168,7 @@
 									
 									
 									
-									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a>|<a rel="facebox" href="letspush.php?id='.$row['incident_report_id'].'">Followup</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a>|<a rel="facebox" href="letspush.php?id='.$row['incident_report_id'].'">Followup</a>|  <a href="deleteincidence.php?id='.$row['incident_report_id'].'" title="Click To Delete">Delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 
@@ -161,7 +177,7 @@
 				</div>
 				<div id="footer" class="radius-bottom">
 					2016 ©
-					<a class="afooter-link" href="">CSO Web Panel - SafePal</a>
+					<a class="afooter-link" href="">Admin Panel - SafePal</a>
 					by
 					<a class="afooter-link" href="">UNFPA</a>
 				</div>

@@ -11,19 +11,7 @@ if (a==null || a=="")
 
 }
 </script>
-<!--sa poip up-->
-<link href="admin/src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-   <script src="admin/lib/jquery.js" type="text/javascript"></script>
 
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('a[rel*=facebox]').facebox({
-        loadingImage : 'src/loading.gif',
-        closeImage   : 'src/closelabel.png'
-      })
-    })
-  </script>
-<style type="text/css">
 <!--
 .ed{
 border-style:solid;
@@ -45,7 +33,7 @@ height: 34px;
 -->
 </style>
 
-<form action="addexec5.php" method="post" enctype="multipart/form-data" name="addinc" onsubmit="return validateForm()">
+<form action="reportnow.php" method="post" enctype="multipart/form-data" name="addinc" onsubmit="return validateForm()">
 
 <p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>

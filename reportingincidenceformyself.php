@@ -29,17 +29,7 @@ require('./calendar/tc_calendar.php');
 ?>
 </script>
 <!--sa poip up-->
-<link href="admin/src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-   <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('a[rel*=facebox]').facebox({
-        loadingImage : 'src/loading.gif',
-        closeImage   : 'src/closelabel.png'
-      })
-    })
-  </script>
+
 <style type="text/css">
 <!--
 .ed{
@@ -62,11 +52,14 @@ height: 34px;
 -->
 </style>
 
-<form action="addexec5.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
+<form action="reportnow.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
 
 <p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
-		  <tr><td>When is your birthday:<?php
+		  <tr><td>When is your birthday:
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  &nbsp;&nbsp;
+		  <?php
 		 
 		  $myCalendar = new tc_calendar("date1", true);
 		  $myCalendar->setIcon("./calendar/images/iconCalendar.gif");
@@ -84,29 +77,53 @@ height: 34px;
 		  $myCalendar->setAlignment('right', 'bottom'); //optional
 		  $myCalendar->writeScript();
 		  ?></td> </tr>
-		  <tr><td>What is your estimated age (**):<input name="age" type="text" class="ed" size="23px"/></td>
+		  <tr><td>What is your estimated age (**):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+		  <input name="age" type="text" class="ed" size="23px"/></td>
   </tr>
-<tr><td>Are you a Boy or Girl:&nbsp; &nbsp; <select name="sex" class="ed">
+<tr><td>Are you a Boy or Girl:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <select name="sex" class="ed">
  <option value="Male">Boy</option>
   <option value="Female">Girl</option></td> </tr>
 
-<tr><td>In what location did the incident happen?:<input name="place" type="text" class="ed" size="23px"/></td>
+<tr><td>In what location did the incident happen?:&nbsp;&nbsp;
+ <select name="dist" class="ed" >
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from locations");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['loc_name']?>"><?php echo $row['loc_name']?></option>
+			<?php 
+			}			
+			?>
+			</select></td>
   </tr>
 
   <tr>
-<td>What happened to you:<select name="whathappened" class="ed" >
+<td>What happened to you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="whathappened" class="ed" >
  <option value="Bad Touches">Bad Touches</option>
   <option value="Some one tried to rape me">Some one tried to rape me</option>
    <option value="I was raped">I was raped</option>
     <option value="I was defiled">I was defiled</option>
 	 <option value="Other">Other</option>
   </select></td> </tr>
-   <tr> <td>Tell us your story:<textarea name="story" class="ed">
+   <tr> <td>Tell us your story:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <textarea name="story" class="ed">
 </textarea></td>
   </tr>
 
 
-<tr><td><input type="submit" name="Submit" value="Report incidence" id="button1" /></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="submit" name="Submit" value="Report incidence" id="button1" /></td></tr>
      
  </table>
 </form>

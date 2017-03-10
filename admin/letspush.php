@@ -54,7 +54,7 @@ height: 34px;
 	Description:<br><textarea name="des" class="ed" ><?php echo $des?></textarea><br>
    
 	Feedback after follow up:<br><textarea name="feedback"> </textarea><br>
-  Staus:<br>
+  Status:<br>
   
      <select name="status" class="ed">
 			<?php

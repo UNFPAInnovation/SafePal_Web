@@ -13,19 +13,30 @@ if (a==null || a=="")
 </script>
 
 
-<form action="addexec3.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
+<form action="submitcso.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
 CSO Name<br />
   <input name="name" type="text" class="ed" /><br />
-District<br />
-    <input name="dist" type="text" id="rate" class="ed" /><br />
-Village<br />
-    <input name="villa" type="text" id="qty" class="ed"/><br />
+Location<br />
+     <select name="dist" class="ed">
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from locations");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['loc_name']?>"><?php echo $row['loc_name']?></option>
+			<?php 
+			}			
+			?>
+			</select><br />
+
 Phone Number<br />
-    <input name="phone" type="text" id="qty" class="ed"/><br />			
-Status<br />
-    <input name="status" type="text" id="qty" class="ed"/><br />
-    
- 
+    <input name="phone" type="text" class="ed"/><br />			<br />
+Status:
+   
+<select name="status" class="ed">
+ <option value="Active">Active</option>
+  <option value="Closed">Closed</option>
+  </select>
+ <br /><br />
     <input type="submit" name="Submit" value="save" id="button1" />
  
 </form>

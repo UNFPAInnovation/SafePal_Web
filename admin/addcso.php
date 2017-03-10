@@ -13,7 +13,7 @@ if (a==null || a=="")
 </script>
 
 
-<form action="addexec3.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
+<form action="submitcso.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
 CSO Name<br />
   <input name="name" type="text" class="ed" /><br />
 Location<br />

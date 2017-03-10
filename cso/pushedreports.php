@@ -1,6 +1,17 @@
 <?php
 	require_once('../auth.php');
+
+if(isset($_SESSION['Admin'])!='' && isset($_SESSION['password'])!='')
+{
+$staff = $_SESSION['Admin'];
 ?>
+
+	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
 <html>
 <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -49,7 +60,7 @@
 		<div id="panel-outer" class="radius" style="opacity: 1" style="margin-top:10%">
 			<div id="panel" class="radius" >
 				<ul class="radius-top clearfix" id="main-menu">
-					<li>
+		<li>
 						<a class="active" href="dashboard.php">
 							<img alt="Dashboard" src="img/m-dashboard.png" title='Home'>
 							<span>Dashboard</span>
@@ -67,7 +78,7 @@
 					<li>
 						<a href="levels.php">
 							<img alt="Statistics" src="img/add.png" title='manage user levels'>
-							<span>Levels</span>
+							<span>User Groups</span>
 						</a>
 					</li>
 					<li>
@@ -83,27 +94,27 @@
 						</a>
 					</li> 
 					<li>
-						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+						<a href="reports.php">
+							<img alt="Statistics" src="img/pr.png" title='Generate Reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Followup</span>
+							<img alt="Dashboard" src="img/cont.png" title='view Summary'>
+							<font  size="1px"><span>Followup Summary</span></font>
 						</a>
 					</li>
 					<li>
-						<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span>Notifications</span>
+						<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='View New Incidents'>
+							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>New Incidents</span>
 						</a>
 					</li> 
 					<li>
-						<a href="profile.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
-							<span>My Profile</span>
+						<a href="settings.php">
+							<img alt="Articles" src="img/m-articles.png" title='System Settings'>
+							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
@@ -204,3 +215,9 @@ return false;
 </script>
 </body>
 </html>
+<?php
+}
+else{
+header ('location:/index.php');
+}
+?>

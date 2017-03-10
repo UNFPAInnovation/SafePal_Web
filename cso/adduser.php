@@ -13,7 +13,7 @@ if (a==null || a=="")
 </script>
 
 
-<form action="addexec3.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
+<form action="addexec31.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
  Full Name<br />
   <input name="fname" type="text" class="ed" /><br />
  User Name<br />
@@ -28,6 +28,18 @@ if (a==null || a=="")
 			$result = mysql_query("SELECT * from user_categories");
 			while ($row = mysql_fetch_array($result)){?>
 			<option value="<?php echo $row['user_category']?>"><?php echo $row['user_category']?></option>
+			<?php 
+			}			
+			?>
+			</select><br />
+	
+		Attached CSO<br />
+     <select name="loc" class="ed">
+			<?php
+			include('connect.php');
+			$resultx = mysql_query("SELECT * from  locations");
+			while ($row = mysql_fetch_array($resultx)){?>
+			<option value="<?php echo $row['loc_name']?>"><?php echo $row['loc_name']?></option>
 			<?php 
 			}			
 			?>

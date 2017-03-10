@@ -2,22 +2,25 @@ html, body {
     background: url("../img/bg.jpg") repeat scroll 0 0 #333333;
     color: #333333;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 11px;
-    line-height: 1.6;
-	margin:0;
+    font-size: 12px;
+    line-height: 1.9;
+	margin:1;
 }
 #container {
     margin: 0 auto;
-    width: 960px;
+    width: 1340px;
+	
 }
 #login-container-outer, #container #adminbar-outer, #container #panel-outer {
     border: 1px solid #444444;
     box-shadow: 0 0 10px #000000;
+	margin-top:-3%;
 }
 #container #adminbar-outer {
     background: none repeat scroll 0 0 #403F44;
     border-top: medium none;
     margin: 0 0 10px;
+	margin-top:-1%;
 }
 .radius-bottom {
     border-bottom-left-radius: 5px;
@@ -29,7 +32,7 @@ html, body {
 #container #adminbar {
     background: url("../img/adminbar.png") repeat scroll left top transparent;
     border-top: medium none;
-    height: 50px;
+    height: 85px;
 }
 .radius-bottom {
     border-bottom-left-radius: 7px;
@@ -40,15 +43,15 @@ html, body {
 }
 
 #container #adminbar a#logo {
-    background: url("../img/logoa.png") no-repeat scroll left top transparent;
+    background: url("../img/logoa2.png") no-repeat scroll left top transparent;
     display: block;
     float: left;
-    height: 50px;
-    width: 700px;
+    height: 85px;
+    width: 1338px;
 	
 }
 #container #adminbar a#logo:hover {
-    background: url("../img/logoa.png") no-repeat scroll left bottom transparent;
+    background: url("../img/logoa2.png") no-repeat scroll left bottom transparent;
 }
 #container #adminbar #details {
     color: #FFFFFF;

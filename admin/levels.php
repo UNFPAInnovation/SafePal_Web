@@ -38,32 +38,21 @@
 		<div id="adminbar-outer" class="radius-bottom">
 			<div id="adminbar" class="radius-bottom" style="margin-top:0.9%">
 				<a id="logo" href="dashboard.php"></a>
-				<div id="details">
-					<a class="avatar" href="javascript: void(0)">
-					<img width="36" height="36" alt="avatar" src="img/avatar.jpg">
-					</a>
-					<div class="tcenter" style="margin-left:-20%">
-					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
-					!
-					<br>
-					<a class="alightred" href="../index.php">Logout</a>
-					</div>
-				</div>
+				
 			</div>
 		</div>
-		<div id="panel-outer" class="radius" style="opacity: 1;">
-			<div id="panel" class="radius">
+		<div id="panel-outer" class="radius" style="opacity: 1" style="margin-top:10%">
+			<div id="panel" class="radius" >
 				<ul class="radius-top clearfix" id="main-menu">
 					<li>
 						<a class="active" href="dashboard.php">
-							<img alt="Dashboard" src="img/m-dashboard.png" title='view current orders,instant message also sent to farmer'>
+							<img alt="Dashboard" src="img/m-dashboard.png" title='Home'>
 							<span>Dashboard</span>
 						</a>
 					</li>
 					<li>
 						<a href="user.php">
-							<img alt="Users" src="img/m-users.png">
+							<img alt="Users" src="img/m-users.png" title='manage users'>
 							<span>Users</span>
 							<span class="submenu-arrow"></span>
 						</a>
@@ -72,47 +61,61 @@
 					
 					<li>
 						<a href="levels.php">
-							<img alt="Statistics" src="img/add.png" title='add user levels'>
+							<img alt="Statistics" src="img/add.png" title='manage user levels'>
 							<span>User Groups</span>
 						</a>
 					</li>
 					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='Manage the incidents'>
+						<img alt="Statistics" src="img/re.png" title='manage Reported Incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
 					<li>
 					<a href="cso.php">
-							<img alt="Statistics" src="img/m-statistics.png" title='Manage CSOs on the platform'>
+							<img alt="Statistics" src="img/m-statistics.png" title='manage CSOs'>
 							<span>CSO</span>
 						</a>
-					</li>
+					</li> 
 					<li>
-						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title=' forecast the price changes for the commodity and generate graphs'>
+						<a href="reports.php">
+							<img alt="Statistics" src="img/pr.png" title='Generate Reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view summary'>
-							<span>Incident Summary</span>
+							<img alt="Dashboard" src="img/cont.png" title='view Summary'>
+							<font  size="1px"><span>Followup Summary</span></font>
 						</a>
 					</li>
 					<li>
 						<a href="newincidents.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
+							<img alt="Newsletter" src="img/m-newsletter.png" title='View New Incidents'>
+							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>New Incidents</span>
 						</a>
 					</li> 
 					<li>
 						<a href="settings.php">
-							<img alt="Articles" src="img/m-articles.png">
+							<img alt="Articles" src="img/m-articles.png" title='System Settings'>
 							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
+					
+					<div id="details">
+					
+					<div class="tcenter" style="margin-left:-20%">
+					Hi
+					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					!
+					<br>
+					<a href="../login.php">Logout</a>
+					</div>
+				</div>
+					
+					<div class="clearfix"></div>
+				</ul>
 					<div class="clearfix"></div>
 				</ul>
 				<div id="content" class="clearfix">

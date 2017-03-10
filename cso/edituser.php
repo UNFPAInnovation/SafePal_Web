@@ -36,7 +36,17 @@ height: 34px;
 	Full name:<br><input type="text" name="fname" value="<?php echo $fname ?>" class="ed"><br>
 	User Name:<br><input type="text" name="username" value="<?php echo $username ?>" class="ed"><br>
 	Password:<br><input type="text" name="password" value="<?php echo $password ?>" class="ed"><br>
-
+	Level<br />
+     <select name="level" class="ed">
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from user_categories");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['user_category']?>"><?php echo $row['user_category']?></option>
+			<?php 
+			}			
+			?>
+			</select><br />
 			
 	<input type="submit" value="Edit User" id="button1">
 </form>

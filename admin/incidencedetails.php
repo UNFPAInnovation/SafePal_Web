@@ -1,4 +1,14 @@
-
+<link href="src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+   <script src="lib/jquery.js" type="text/javascript"></script>
+  <script src="src/details/facebox.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loadingImage : 'src/loading.gif',
+        closeImage   : 'src/closelabel.png'
+      })
+    })
+  </script>
 <?php
 	include('connect.php');
 	$id=$_GET['id'];
@@ -32,7 +42,7 @@
 	
 <table>
 <tr>
-<td>Incidence Code: <input type="text" name="name" value="<?php echo 'SFPINC'.$iid ?>" readonly class="ed"  style="width: 165px; align=right margin-left: 15px; border: 2px double #CCCCCC; padding:5px 10px;"/></td>
+<td>Incidence Code: <input type="text" name="name" value="<?php echo 'SP'.$iid ?>" readonly class="ed"  style="width: 165px; align=right margin-left: 15px; border: 2px double #CCCCCC; padding:5px 10px;"/></td>
 <td>Survivors's Name: <input type="text" name="gender" value="<?php echo $name ?>" readonly class="ed"  style="width: 165px; align=right margin-left: 15px; border: 2px double #CCCCCC; padding:5px 10px;"/></td>
 </tr>	
 <tr>
