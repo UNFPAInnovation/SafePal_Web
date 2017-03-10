@@ -19,22 +19,22 @@
       })
     })
   </script>
+  <html>
+  <head>
   	<?php
 							include('connect.php');
 							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
 							$result = mysql_fetch_array($sql);
 												
 												?> 		
-  <html>
-  <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
-<title>Admin Panel - track</title>
+<title>SafePal - Admin Dashboard</title>
 </head>
 <body>
-		<div id="container">
+	<div id="container">
 		<div id="adminbar-outer" class="radius-bottom">
 			<div id="adminbar" class="radius-bottom" style="margin-top:0.9%">
 				<a id="logo" href="dashboard.php"></a>
@@ -116,34 +116,38 @@
 					
 					<div class="clearfix"></div>
 				</ul>
-					<div class="clearfix"></div>
-				</ul>
-				<div id="content" class="clearfix">
+			<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
+					
 					<a rel="facebox" href="addloc.php">Add Location</a> &nbsp;&nbsp;&nbsp;
 					<a href="settings.php">View Locations</a>&nbsp;&nbsp;&nbsp;
 					<a rel="facebox" href="addincidencestatus.php">Add Incidence Status</a>&nbsp;&nbsp;&nbsp;
 					<a href="incidencestatus.php">View Incidence Status</a>
+									<div id="content" class="clearfix">
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
-												<tr>
-								<th> Location </th>
-								<th>Location decsription </th>
+							<tr>
+							<th> Incidence Code </th>
+								
+								
+								<th> Description</th>
+																
 								<th> Actions </th>
-								</tr>
+							</tr>
 						</thead>
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM locations");
+							
+							$result = mysql_query("SELECT * FROM incidence_status");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
-									
-									echo '<td><div align="left">'.$row['loc_name'].'</div></td>';
-									echo '<td><div align="left">'.$row['des'].'</div></td>';
-																	
-									echo '<td><div align="center"><a rel="facebox" href="editlevel.php?id='.$row['loc_id'].'">edit</a> | <a href="deletelevel.php?id='.$row['loc_id'].'" title="Click To Delete">delete</a></div></td>';
+									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['status_name'].'</td>';
+									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['desc'].'</td>';
+								
+								
+									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['incidence_status_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['incidence_status_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 
@@ -177,12 +181,12 @@ var del_id = element.attr("id");
 
 //Built a url to send
 var info = 'id=' + del_id;
- if(confirm("Sure you want to delete this update? There is NO undo!"))
+ if(confirm("Sure you want to delete this record? There is NO undo!"))
 		  {
 
  $.ajax({
    type: "GET",
-   url: "deleteroom.php",
+   url: "deleteuser.php",
    data: info,
    success: function(){
    
@@ -201,3 +205,4 @@ return false;
 </script>
 </body>
 </html>
+

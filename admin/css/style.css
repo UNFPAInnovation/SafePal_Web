@@ -2,7 +2,7 @@ html, body {
     background: url("../img/bg.jpg") repeat scroll 0 0 #333333;
     color: #333333;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.9;
 	margin:1;
 }
@@ -117,18 +117,19 @@ ul#main-menu li a {
     color: #333333;
     display: block;
     font-weight: bold;
-    height: 80px;
+    height: 50px;
     line-height: 1px;
     position: relative;
     text-align: center;
     text-shadow: 0 1px 1px #EEEEEE;
-    width: 100px;
+    width: 91px;
 	text-decoration:none;
+	
 }
 ul#main-menu li a img {
-    height: 40px;
+    height: 20px;
     padding: 10px 15px 5px;
-    width: 40px;
+    width: 28px;
 }
 ul#main-menu li a span {
     display: block;

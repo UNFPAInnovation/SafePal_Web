@@ -27,7 +27,7 @@ if (a==null || a=="")
       //-->
    </SCRIPT>
 
-<form action="addexec41.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
+<form action="addstatus.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
 Incidence Status Name<br />
   <input name="dname" type="text" class="ed" /><br />
   Description<br />
