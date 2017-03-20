@@ -152,13 +152,13 @@
 										echo '<td><div align="left">SW'.$row['incident_report_id'].'</div></td>';
 									
 									echo '<td><div align="left">'.$row['survivor_gender'].'</div></td>';
-									echo '<td><div align="left">'.$row['perpetrator_estimated_age'].'</div></td>'; 
-									echo '<td><div align="left">'.$row['incident_reported_by'].'</div></td>';
+									echo '<td><div align="left">'.$row['survivor_date_of_birth'].'</div></td>'; 
+									echo '<td><div align="left">'.$row['incident_type'].'</div></td>';
 									
 									echo '<td><div align="left">'.$row['incident_location'].'</div></td>'; 
 									echo '<td><div align="left">'.$row['incident_description'].'</div></td>';
 								
-									echo '<td><div align="left">'.$row['incident_date_and_time'].'</div></td>';
+									echo '<td><div align="left">'.$row['report_timestamp'].'</div></td>';
 									if($row['status']=='New')
 									echo "<td style='background-color: #FF0000;'>".$row['status']."</td>"; 
 									else if($row['status']=='Need later followup')
