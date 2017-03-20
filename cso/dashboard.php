@@ -35,7 +35,7 @@ $staff = $_SESSION['CSO'];
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
-<title>SafePal - CSO Dashboard</title>
+<title>SafePal - Admin Dashboard</title>
 </head>
 <body>
 	<div id="container">
@@ -110,7 +110,7 @@ $staff = $_SESSION['CSO'];
 					<div id="details">
 					
 					<div class="tcenter" style="margin-left:-20%">
-					Hi!
+					Loged in As
 					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>

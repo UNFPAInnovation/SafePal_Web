@@ -8,8 +8,8 @@ include('connect.php');
 			
 $update=mysql_query("INSERT INTO incidence_status(incidence_name,desc)
 VALUES
-('AA','VV')");
-header("location: settings.php");
+('$dname','$des')");
+header("location: incidencestatus.php");
 			exit();
 		
 

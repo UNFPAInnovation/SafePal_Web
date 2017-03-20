@@ -118,17 +118,20 @@
 				</ul>
 			<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a rel="facebox" href="adduser.php">Add user</a>
+					
+					<a rel="facebox" href="addloc.php">Add Location</a> &nbsp;&nbsp;&nbsp;
+					<a href="settings.php">View Locations</a>&nbsp;&nbsp;&nbsp;
+					<a rel="facebox" href="addincidencestatus.php">Add Incidence Status</a>&nbsp;&nbsp;&nbsp;
+					<a href="incidencestatus.php">View Incidence Status</a>
 									<div id="content" class="clearfix">
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 							<tr>
-							<th> Full Name </th>
-								<th  style="border-left: 1px solid #C1DAD7"> Username </th>
+							<th> Incidence Code </th>
 								
-								<th> User LEVEL</th>
-								<th> LOCATION</th>
 								
+								<th> Description</th>
+																
 								<th> Actions </th>
 							</tr>
 						</thead>
@@ -136,17 +139,15 @@
 						<?php
 							include('connect.php');
 							
-							$userid= $_SESSION['ID'];
-							$result = mysql_query("SELECT * FROM users");
+							$result = mysql_query("SELECT * FROM incidence_status");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
-									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['fullname'].'</td>';
-									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['username'].'</td>';
-									echo'<td><div align="left">'.$row['user_categories_user_category_id'].'</div></td>';
-									echo'<td><div align="left">'.$row['location'].'</div></td>';
+									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['status_name'].'</td>';
+									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['desc'].'</td>';
 								
-									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['user_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['user_id'].'" title="Click To Delete">delete</a></div></td>';
+								
+									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['incidence_status_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['incidence_status_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 
