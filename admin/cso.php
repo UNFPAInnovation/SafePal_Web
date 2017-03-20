@@ -129,7 +129,9 @@
 								<th>CSO Name</th>
 								<th>Location</th>
 								<th> Phone No</th>
-								<th> Status </th>
+								<th> Email Address</th>
+								<th> Status</th>
+								
 								
 								<th> Action </th>
 							</tr>
@@ -147,6 +149,7 @@
 									echo '<td><div align="left">'.$row['cso_location'].'</div></td>';
 									echo '<td><div align="left">'.$row['cso_phone_number'].'</div></td>';
 									echo '<td><div align="left">'.$row['cso_email'].'</div></td>';
+										echo '<td><div align="left">'.$row['status'].'</div></td>';
 								
 									
 									

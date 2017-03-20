@@ -31,7 +31,7 @@ height: 34px;
 				$email=$row['cso_email'];
 			}
 ?>
-<form action="execedituser.php" method="post">
+<form action="submiteditcso.php" method="post">
 	<input type="text" hidden name="id" value="<?php echo $id=$_GET['id'] ?>">
 	CSO name:<br><input type="text" name="fname" value="<?php echo $fname ?>" class="ed"><br>
 Location<br />
@@ -53,5 +53,5 @@ Location<br />
   <option value="Closed">Closed</option>
   </select>
  <br /><br />
-	<input type="submit" value="Edit User" id="button1">
+	<input type="submit" value="Edit CSO" id="button1">
 </form>

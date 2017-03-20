@@ -30,6 +30,8 @@ Location<br />
 
 Phone Number<br />
     <input name="phone" type="text" class="ed"/><br />			<br />
+	Email Address<br />
+    <input name="email" type="text" class="ed"/><br />			<br />
 Status:
    
 <select name="status" class="ed">
