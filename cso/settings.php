@@ -120,16 +120,16 @@
 				</ul>
 				<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a rel="facebox" href="addloc.php">Add Location</a> &nbsp;&nbsp;&nbsp;
+					
 					<a href="settings.php">View Locations</a>&nbsp;&nbsp;&nbsp;
-					<a rel="facebox" href="addincidencestatus.php">Add Incidence Status</a>&nbsp;&nbsp;&nbsp;
+					
 					<a href="incidencestatus.php">View Incidence Status</a>
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 												<tr>
 								<th> Location </th>
 								<th>Location decsription </th>
-								<th> Actions </th>
+
 								</tr>
 						</thead>
 						<tbody>
@@ -143,7 +143,7 @@
 									echo '<td><div align="left">'.$row['loc_name'].'</div></td>';
 									echo '<td><div align="left">'.$row['des'].'</div></td>';
 																	
-									echo '<td><div align="center"><a rel="facebox" href="editlocation.php?id='.$row['loc_id'].'">edit</a> | <a href="deleteloc.php?id='.$row['loc_id'].'" title="Click To Delete">delete</a></div></td>';
+									
 									echo '</tr>';
 								}
 							?> 

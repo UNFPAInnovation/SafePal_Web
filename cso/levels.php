@@ -120,13 +120,13 @@
 				</ul>
 				<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a rel="facebox" href="addlevel.php">Add user group</a> &nbsp;&nbsp;&nbsp;<a rel="facebox" href="adduser.php">Add Member</a>
+					
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 												<tr>
 								<th> UserGroup </th>
 								<th> Desciption </th>
-								<th> Actions </th>
+								
 								</tr>
 						</thead>
 						<tbody>
@@ -140,7 +140,7 @@
 									echo '<td><div align="left">'.$row['user_category'].'</div></td>';
 									echo '<td><div align="left">'.$row['des'].'</div></td>';
 									
-									echo '<td><div align="center"><a rel="facebox" href="editlevel.php?id='.$row['user_category_id'].'">edit</a> | <a href="deletelevel.php?id='.$row['user_category_id'].'" title="Click To Delete">delete</a></div></td>';
+									
 									echo '</tr>';
 								}
 							?> 

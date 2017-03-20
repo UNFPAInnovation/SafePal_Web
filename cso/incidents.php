@@ -168,7 +168,7 @@
 									
 									
 									
-									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a>|<a rel="facebox" href="letspush.php?id='.$row['incident_report_id'].'">Followup</a>|  <a href="deleteincidence.php?id='.$row['incident_report_id'].'" title="Click To Delete">Delete</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a>|<a rel="facebox" href="letspush.php?id='.$row['incident_report_id'].'">Followup</a></div></td>';
 									echo '</tr>';
 								}
 							?> 

@@ -161,7 +161,7 @@
 									
 									
 									
-									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a>| <a href="#" id="'.$row['incident_report_id'].'" class="delbutton" title="Click To Delete">Del</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a></div></td>';
 									echo '</tr>';
 								}
 							?> 

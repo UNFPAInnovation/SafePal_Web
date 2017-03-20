@@ -129,7 +129,7 @@
 								<th> User LEVEL</th>
 								<th> LOCATION</th>
 								
-								<th> Actions </th>
+							
 							</tr>
 						</thead>
 						<tbody>
@@ -146,7 +146,7 @@
 									echo'<td><div align="left">'.$row['user_categories_user_category_id'].'</div></td>';
 									echo'<td><div align="left">'.$row['location'].'</div></td>';
 								
-									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['user_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['user_id'].'" title="Click To Delete">delete</a></div></td>';
+									
 									echo '</tr>';
 								}
 							?> 

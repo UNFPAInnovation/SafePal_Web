@@ -122,7 +122,7 @@
 				
 				<div id="content" class="clearfix">
 					<label for="filter">Expert Filter</label> <input type="text" name="filter" value="" id="filter" />
-				<a rel="facebox" href="addcso.php">Add New CSO</a>
+			
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 							<tr>
@@ -131,9 +131,7 @@
 								<th> Phone No</th>
 								<th> Email Address</th>
 								<th> Status</th>
-								
-								
-								<th> Action </th>
+
 							</tr>
 						</thead>
 						<tbody>
@@ -153,7 +151,7 @@
 								
 									
 									
-									echo '<td><div align="center"><a rel="facebox" href="editcso.php?id='.$row['cso_details_id'].'">edit</a> | <a href="deletecso.php?id='.$row['cso_details_id'].'" title="Click To Delete">delete</a></div></td>';
+									
 									echo '</tr>';
 								}
 							?> 
