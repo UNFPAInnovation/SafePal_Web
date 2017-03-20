@@ -19,37 +19,26 @@
       })
     })
   </script>
-  <?php
+  	<?php
 							include('connect.php');
 							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
 							$result = mysql_fetch_array($sql);
 												
-												?> 	
+												?> 		
   <html>
   <head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
-<title>SafePal - Admin Dashboard</title>
+<title>Admin Panel - track</title>
 </head>
 <body>
-	<div id="container">
+		<div id="container">
 		<div id="adminbar-outer" class="radius-bottom">
 			<div id="adminbar" class="radius-bottom" style="margin-top:0.9%">
 				<a id="logo" href="dashboard.php"></a>
-				<div id="details">
-					<a class="avatar" href="javascript: void(0)">
-					<img width="36" height="36" alt="avatar" src="img/avatar.jpg">
-					</a>
-					<div class="tcenter" style="margin-left:-20%">
-					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
-					!
-					<br>
-					<a class="alightred" href="../index.php">Logout</a>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 		<div id="panel-outer" class="radius" style="opacity: 1" style="margin-top:10%">
@@ -78,7 +67,7 @@
 					</li>
 					<li>
 						<a href="incidents.php">
-							<img alt="Statistics" src="img/re.png" title='manage course units'>
+							<img alt="Statistics" src="img/re.png" title='manage Reported Incidents'>
 							<span>Incidents</span>
 						</a>
 					</li>
@@ -89,30 +78,41 @@
 						</a>
 					</li> 
 					<li>
-						<a href="assignments.php">
-							<img alt="Statistics" src="img/pr.png" title='view personal load'>
+						<a href="reports.php">
+							<img alt="Statistics" src="img/pr.png" title='Generate Reports'>
 							<span>Reports</span>
 						</a>
 					</li>
 					<li>
 						<a href="followup.php">
-							<img alt="Dashboard" src="img/cont.png" title='view teaching log books'>
-							<span>Incident Summary</span>
+							<img alt="Dashboard" src="img/cont.png" title='view Summary'>
+							<font  size="1px"><span>Followup Summary</span></font>
 						</a>
 					</li>
 					<li>
-										<a href="notifications.php">
-							<img alt="Newsletter" src="img/m-newsletter.png" title='view students messages'>
-							<span><font color="red" size="5px"> <?php echo $result[0]; ?> </font>Notifications</span>
+						<a href="newincidents.php">
+							<img alt="Newsletter" src="img/m-newsletter.png" title='View New Incidents'>
+							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>New Incidents</span>
 						</a>
 					</li> 
 					<li>
 						<a href="settings.php">
-							<img alt="Articles" src="img/m-articles.png" title='view students assesments'>
+							<img alt="Articles" src="img/m-articles.png" title='System Settings'>
 							<span>Settings</span>
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
+					
+					<div id="details">
+					
+					<div class="tcenter" style="margin-left:-20%">
+				Hi
+					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					!
+					<br>
+					<a href="../login.php">Logout</a>
+					</div>
+				</div>
 					<div class="clearfix"></div>
 				</ul>
 				<div id="content" class="clearfix">
@@ -140,7 +140,7 @@
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM incident_report_details where authority='Police'");
+							$result = mysql_query("SELECT * FROM incident_report_details where status='DWTBC'");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
