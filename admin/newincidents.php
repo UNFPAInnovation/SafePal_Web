@@ -129,8 +129,8 @@
 								<th> Sex</th>
 								<th> Age </th>
 								<th> Incidence </th>
-								<th> District</th>
-								<th> Village</th>
+								
+								<th> Location</th>
 								<th> Details </th>
 							
 								<th> Date</th>
@@ -147,16 +147,16 @@
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
-										echo '<td><div align="left">SW'.$row['incident_report_id'].'</div></td>';
+										echo '<td><div align="left">SPW'.$row['incident_report_id'].'</div></td>';
 										echo '<td><div align="left">'.$row['survivor_name'].'</div></td>';
 									echo '<td><div align="left">'.$row['survivor_gender'].'</div></td>';
-									echo '<td><div align="left">'.$row['perpetrator_estimated_age'].'</div></td>'; 
-									echo '<td><div align="left">'.$row['incident_reported_by'].'</div></td>';
-									echo '<td><div align="left">'.$row['incident_location'].'</div></td>';
+									echo '<td><div align="left">'.$row['survivor_date_of_birth'].'</div></td>'; 
+									echo '<td><div align="left">'.$row['incident_type'].'</div></td>';
+								
 									echo '<td><div align="left">'.$row['incident_location'].'</div></td>'; 
 									echo '<td><div align="left">'.$row['incident_description'].'</div></td>';
 								
-									echo '<td><div align="left">'.$row['incident_date_and_time'].'</div></td>';
+									echo '<td><div align="left">'.$row['report_timestamp'].'</div></td>';
 									echo '<td><font color="red" size="2px"><div align="left">'.$row['status'].'</div></font></td>';
 									
 									

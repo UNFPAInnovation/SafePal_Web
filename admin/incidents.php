@@ -149,7 +149,7 @@
 									echo '<tr class="record">';
 									
 										
-										echo '<td><div align="left">SW'.$row['incident_report_id'].'</div></td>';
+										echo '<td><div align="left">SPW'.$row['incident_report_id'].'</div></td>';
 									
 									echo '<td><div align="left">'.$row['survivor_gender'].'</div></td>';
 									echo '<td><div align="left">'.$row['survivor_date_of_birth'].'</div></td>'; 
