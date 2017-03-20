@@ -72,7 +72,7 @@
     <header class="w3-container w3-cyan"> 
       <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn"><i class="fa fa-remove"></i></span>
       <h2>SafePal Web Reporter</h2>
-    </header>
+    </header> 
     <div class="w3-container">
       <p> &#8212; Know that the sexual violence wasn't your fault
 	  &#8212; You do not have to protect the perpetrator
