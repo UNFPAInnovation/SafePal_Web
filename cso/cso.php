@@ -107,8 +107,8 @@
 					<div id="details">
 					
 					<div class="tcenter" style="margin-left:-20%">
-					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					Logged in As
+					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a href="../login.php">Logout</a>

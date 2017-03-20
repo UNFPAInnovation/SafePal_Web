@@ -106,8 +106,8 @@
 					<div id="details">
 					
 					<div class="tcenter" style="margin-left:-20%">
-					Hi
-					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
+					Loged in As
+					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a href="../login.php">Logout</a>
@@ -118,7 +118,7 @@
 				</ul>
 			<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					<a rel="facebox" href="adduser.php">Add user</a>
+				
 									<div id="content" class="clearfix">
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
