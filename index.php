@@ -55,9 +55,9 @@
 <div class="w3-display-container w3-animate-opacity">
   <img src="images/banner.jpg" alt="boat" style="width:100%;min-height:320px;max-height:480px;">
   <div class="w3-display-middle" style="height:300px;"> 
-	<marquee behavior="alternate" loop="-1">
+	
 	<h2><b><blink>CLICK BELOW TO REPORT AN INCIDENT</blink></b></h2>
-	</marquee>
+	
 	
   </div>
   <div class="w3-display-middle" style="height:20px;">  
