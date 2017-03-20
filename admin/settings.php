@@ -143,7 +143,7 @@
 									echo '<td><div align="left">'.$row['loc_name'].'</div></td>';
 									echo '<td><div align="left">'.$row['des'].'</div></td>';
 																	
-									echo '<td><div align="center"><a rel="facebox" href="editlevel.php?id='.$row['loc_id'].'">edit</a> | <a href="deletelevel.php?id='.$row['loc_id'].'" title="Click To Delete">delete</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="editlocation.php?id='.$row['loc_id'].'">edit</a> | <a href="deleteloc.php?id='.$row['loc_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 

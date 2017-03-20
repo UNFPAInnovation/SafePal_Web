@@ -139,11 +139,11 @@
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM incident_report_details");
+							$result = mysql_query("SELECT * FROM incident_report_details ORDER BY incident_report_id DESC");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
-										echo '<td><div align="left">SFPINC'.$row['incident_report_id'].'</div></td>';
+										echo '<td><div align="left">SW'.$row['incident_report_id'].'</div></td>';
 										echo '<td><div align="left">'.$row['survivor_name'].'</div></td>';
 								
 							

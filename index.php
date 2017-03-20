@@ -27,7 +27,7 @@
   <li class="w3-hide-small"><a href="#service" class="w3-hover-cyan">Service Providers</a></li>
   <li class="w3-hide-small"><a href="#footer" class="w3-hover-cyan">Follow Us</a></li>
   <li class="w3-hide-small w3-dropdown-hover">
-    <a href="javascript:void(0);" title="Download">Download <i class="fa fa-caret-down"></i></a>     
+    <a href="javascript:void(0);" title="Download">Download<i class="fa fa-caret-down"></i></a>     
     <div class="w3-dropdown-content w3-gray w3-card-4">
       <a href="https://play.google.com/apps/testing/com.unfpa.safepal">Get Mobile Version</a>
       
