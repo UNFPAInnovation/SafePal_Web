@@ -346,11 +346,11 @@ function showSlides() {
 <div id="footer">
 <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <h4>Follow Us</h4>
-  <a class="w3-btn-floating w3-teal" href="javascript:void(0)" title="Facebook: @SafePalapp"><i class="fa fa-facebook"></i></a>
-  <a class="w3-btn-floating w3-teal" href="javascript:void(0)" title="Twitter: @SafePalapp "><i class="fa fa-twitter"></i></a>
-  <a class="w3-btn-floating w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin: @SafePalapp"><i class="fa fa-linkedin"></i></a>
-  <a class="w3-btn-floating w3-teal" href="https://play.google.com/apps/testing/com.unfpa.safepal" title="Google Play: @SafePalapp"><i class="fa fa-play"></i></a>
-  <p>&#169;SafePal</p>
+  <a class="w3-btn-floating w3-teal" href="https://facebook.com" target="_blank" title="Facebook: @SafePalapp"><i class="fa fa-facebook"></i></a>
+  <a class="w3-btn-floating w3-teal" href="jhttps://twitter.com" target="_blank"  title="Twitter: @SafePalapp "><i class="fa fa-twitter"></i></a>
+  <a class="w3-btn-floating w3-teal w3-hide-small" href="https://linked.com" target="_blank" title="Linkedin: @SafePalapp"><i class="fa fa-linkedin"></i></a>
+  <a class="w3-btn-floating w3-teal" href="https://play.google.com/apps/testing/com.unfpa.safepal" target="_blank"  title="Google Play: @SafePalapp"><i class="fa fa-play"></i></a>
+  <p>© Copyright 2017 - SafePal/UNFPA</p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   

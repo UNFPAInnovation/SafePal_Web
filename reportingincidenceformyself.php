@@ -54,7 +54,6 @@ height: 34px;
 
 <form action="reportnow.php" method="post" enctype="multipart/form-data" name="addincidence" onsubmit="return validateForm()">
 
-<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
 		  <tr><td>When is your birthday:
 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

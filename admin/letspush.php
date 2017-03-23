@@ -61,7 +61,7 @@ height: 34px;
 			include('connect.php');
 			$result = mysql_query("SELECT * from incidence_status");
 			while ($row = mysql_fetch_array($result)){?>
-			<option value="<?php echo $row['status_name']?>"><?php echo $row['status_name']?></option>
+			<option value="<?php echo $row['desc']?>"><?php echo $row['desc']?></option>
 			<?php 
 			}			
 			?>
