@@ -14,7 +14,9 @@ $staff = $_SESSION['Admin'];
 												?> 		
 <html>
 <head>
-
+<head>
+<link rel="shortcut icon" href="img/safe.png" type="image/x-icon">
+</head>
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
 <!--sa poip up-->

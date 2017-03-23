@@ -21,6 +21,9 @@
   </script>
   <html>
   <head>
+<link rel="shortcut icon" href="img/safe.png" type="image/x-icon">
+</head>
+  <head>
   	<?php
 							include('connect.php');
 							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");

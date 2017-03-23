@@ -27,6 +27,9 @@
 												
 												?> 	
   <head>
+  <head>
+<link rel="shortcut icon" href="img/safe.png" type="image/x-icon">
+</head>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
@@ -130,7 +133,7 @@
 								<th> Age </th>
 								<th> Incidence </th>
 								
-								<th> Location</th>
+								<th> District</th>
 								<th> Details </th>
 							
 								<th> Date</th>

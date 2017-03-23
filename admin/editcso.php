@@ -33,7 +33,7 @@ height: 34px;
 ?>
 <form action="submiteditcso.php" method="post">
 	<input type="text" hidden name="id" value="<?php echo $id=$_GET['id'] ?>">
-	CSO name:<br><input type="text" name="fname" value="<?php echo $fname ?>" class="ed"><br>
+	CSO name:<br><input type="text" name="cname" value="<?php echo $fname ?>" class="ed"><br>
 Location<br />
      <select name="dist" class="ed">
 			<?php
@@ -45,7 +45,7 @@ Location<br />
 			}			
 			?>
 			</select><br />
-			Phone Number:<br><input type="text" name="fname" value="<?php echo $phone?>" class="ed"><br>
+			Phone Number:<br><input type="text" name="phone" value="<?php echo $phone?>" class="ed"><br>
 			Status:
    
 <select name="status" class="ed">

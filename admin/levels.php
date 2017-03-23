@@ -32,6 +32,9 @@
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
 <title>Admin Panel - track</title>
+<head>
+<link rel="shortcut icon" href="img/safe.png" type="image/x-icon">
+</head>
 </head>
 <body>
 	<div id="container">
