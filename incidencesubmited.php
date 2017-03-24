@@ -190,7 +190,7 @@ body {font-family: Verdana,sans-serif;}
 							$result = mysql_query("SELECT * FROM incident_report_details ORDER BY incident_report_id DESC LIMIT 1");
 							while($row = mysql_fetch_array($result))
 								{
-		echo  '<p align="center" > <strong align="right" style="color:red;"><font size="5">Thank you very much, the incident has been Recorded with Reference number SW'.$row['incident_report_id'].'</font> </strong></p>';
+		echo  '<p align="center" > <strong align="right" style="color:red;"><font size="5">Thank you very much, the incident has been Recorded with Reference number SPW'.$row['incident_report_id'].'</font> </strong></p>';
 				}
 							?> 
 				<p align="center" style="color:red;"><strong align="right">Do you wish to be contacted?.</strong></p>

@@ -33,26 +33,37 @@ height: 34px;
 -->
 </style>
 
-<form action="reportnow.php" method="post" enctype="multipart/form-data" name="addinc" onsubmit="return validateForm()">
+<form action="reportnowforfrd.php" method="post" enctype="multipart/form-data" name="addinc" onsubmit="return validateForm()">
 
-<p align="center" style="color:red;"><strong align="right">SafePal web Reporter</strong></p>
 <table>
 <tr><td>What is your relationship with the survivor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="rel" class="ed">
- <option value="Male">Relative</option>
-  <option value="Female">Friend</option>
-   <option value="Female">Schoolmate</option>
-    <option value="Female">Other</option>
+<select name="rel" class="ed">
+ <option value="Relative">Relative</option>
+  <option value="Friend">Friend</option>
+   <option value="Schoolate">Schoolmate</option>
+    <option value="Other">Other</option>
   </td> </tr>
 <tr><td>How old is He/She:<select name="age" class="ed">
- <option value="Male">Below 10</option>
-  <option value="Female">Between 10-24</option>
-   <option value="Female">Above 24</option>
+ <option value="Below 10">Below 10</option>
+  <option value="Between 10-24">Between 10-24</option>
+   <option value="Above 24">Above 24</option>
      </td> </tr>
-	 <tr><td>Victim's Sex:<select name="sex" class="ed">
+	 <tr><td>Victim's Sex:<select name="sex" class="ed"> <br>
  <option value="Male">Boy</option>
   <option value="Female">Girl</option>
      </td> </tr>
+	 <tr><td>In what location did the incident happen?:&nbsp;&nbsp;
+ <select name="place" class="ed" >
+			<?php
+			include('connect.php');
+			$result = mysql_query("SELECT * from locations");
+			while ($row = mysql_fetch_array($result)){?>
+			<option value="<?php echo $row['loc_name']?>"><?php echo $row['loc_name']?></option>
+			<?php 
+			}			
+			?>
+			</select></td>
+  </tr>
   <tr>
 <td>What happened to your freind:<select name="whathappened" class="ed" >
  <option value="Male">Bad Touches</option>

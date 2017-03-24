@@ -172,10 +172,9 @@
 					</table>
 				</div>
 				<div id="footer" class="radius-bottom">
-					2016 ©
-					<a class="afooter-link" href="">Admin Panel - SafePal</a>
-					by
-					<a class="afooter-link" href="">UNFPA</a>
+					
+					<a class="afooter-link" href="">© Copyright 2017 - SafePal/UNFPA</a>
+					
 				</div>
 				<div class="clearfix"></div>
 			</div>

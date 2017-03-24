@@ -141,7 +141,7 @@ $staff = $_SESSION['Admin'];
 							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
 							$result = mysql_fetch_array($sql);
 							
-							$sql2 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='DWTBC'");
+							$sql2 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='Does Not Want to be Contacted'");
 							$result2 = mysql_fetch_array($sql2);
 							
 							$sql3 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='WTBC'");
@@ -205,10 +205,9 @@ $staff = $_SESSION['Admin'];
 					</table>
 				</div>
 				<div id="footer" class="radius-bottom">
-					2016 ©
-					<a class="afooter-link" href="">Admin Panel - Safe Pal</a>
-					by
-					<a class="afooter-link" href="">UNFPA</a>
+					
+					<a class="afooter-link" href="">© Copyright 2017 - SafePal/UNFPA</a>
+					
 				</div>
 				<div class="clearfix"></div>
 			</div>
