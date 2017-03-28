@@ -13,26 +13,26 @@
 	   
 	if($num_row  == 0) 
 	{
-	header("location: invalidlevels.php");
+	header("location: invalidpassword.php");
 	exit();
-			}		
+	}
+				
 	
 	else
 	{
+	$name=$_POST['name'];
+			$dist=$_POST['dist'];
+			$phone=$_POST['phone'];
+			$email=$_POST['email'];
+			$status=$_POST['status'];
+			
 
-
-			$dname=$_POST['dname'];
-			$des=$_POST['des'];
 			
-			
-			
-
-			
-$update=mysql_query("INSERT INTO user_categories (user_category, des)
+$update=mysql_query("INSERT INTO cso_details(cso_name,cso_location,cso_phone_number,cso_email,status)
 VALUES
-('$dname','$des')");
-header("location: levels.php");
+('$name','$dist','$phone','$email','$status')");
+header("location: cso.php");
 			exit();
-		
-}
+	}
+			
 ?>

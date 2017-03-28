@@ -147,7 +147,7 @@
 									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['desc'].'</td>';
 								
 								
-									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['incidence_status_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['incidence_status_id'].'" title="Click To Delete">delete</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="editstatus.php?id='.$row['incidence_status_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['incidence_status_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 

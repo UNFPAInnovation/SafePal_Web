@@ -21,18 +21,21 @@
   </script>
   <html>
   <head>
+<link rel="shortcut icon" href="img/safe.png" type="image/x-icon">
+</head>
+  <head>
+  	<?php
+							include('connect.php');
+							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result = mysql_fetch_array($sql);
+												
+												?> 		
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="febe/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="argiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>	
 <title>SafePal - Admin Dashboard</title>
 </head>
-	<?php
-							include('connect.php');
-							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
-							$result = mysql_fetch_array($sql);
-												
-												?> 		
 <body>
 	<div id="container">
 		<div id="adminbar-outer" class="radius-bottom">
@@ -102,24 +105,12 @@
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
-					<li>
-						<a href="myprofile.php">
-							<img alt="Users" src="img/m-users.png" title='manage users'>
-							<span>My profile</span>
-							<span class="submenu-arrow"></span>
-						</a>
-					</li>
-					<li>
-						<a href="myincidents.php">
-							<img alt="Newsletter" src="img/re.png" title='View New Incidents'>
-							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>My Assignments</span>
-						</a>
-					</li> 
+					
 					<div id="details">
 					
 					<div class="tcenter" style="margin-left:-20%">
-					Logged in As
-					<strong>CSO:<?php echo $_SESSION['fname']; ?></strong>
+					Hi
+					<strong>Admin:<?php echo $_SESSION['fname']; ?></strong>
 					!
 					<br>
 					<a href="../login.php">Logout</a>
@@ -128,66 +119,45 @@
 					
 					<div class="clearfix"></div>
 				</ul>
-					<div class="clearfix"></div>
-				</ul>
-				<div id="content" class="clearfix">
+			<div id="content" class="clearfix">
 					<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
-					
+					<a rel="facebox" href="adduser.php">Add user</a>
+					<span><font color="red" size="2px"> OOps!!!!!  Please check that you have an admistrative password to register a user.</font></span>
+									<div id="content" class="clearfix">
 					<table cellpadding="1" cellspacing="1" id="resultTable">
 						<thead>
 							<tr>
-							     <th> Unique Number </th>
-							
-								<th> Sex</th>
-								<th> Age </th>
-								<th> Incidence</th>
-							
-								<th> Location</th>
-								<th> Details </th>
-							
-								<th> Date</th>
-								<th> Status</th>
+							<th> Full Name </th>
+								<th  style="border-left: 1px solid #C1DAD7"> Username </th>
 								
-								<th> ToDo Actions </th>
+								<th> User LEVEL</th>
+								<th> LOCATION</th>
 								
+								<th> Actions </th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM incident_report_details ORDER BY incident_report_id DESC");
+							
+							$userid= $_SESSION['ID'];
+							$result = mysql_query("SELECT * FROM users");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
-									
-										
-										echo '<td><div align="left">SPW'.$row['incident_report_id'].'</div></td>';
-									
-									echo '<td><div align="left">'.$row['survivor_gender'].'</div></td>';
-									echo '<td><div align="left">'.$row['survivor_date_of_birth'].'</div></td>'; 
-									echo '<td><div align="left">'.$row['incident_type'].'</div></td>';
-									
-									echo '<td><div align="left">'.$row['incident_location'].'</div></td>'; 
-									echo '<td><div align="left">'.$row['incident_description'].'</div></td>';
+									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['fullname'].'</td>';
+									echo '<td style="border-left: 1px solid #C1DAD7;">'.$row['username'].'</td>';
+									echo'<td><div align="left">'.$row['user_categories_user_category_id'].'</div></td>';
+									echo'<td><div align="left">'.$row['location'].'</div></td>';
 								
-									echo '<td><div align="left">'.$row['report_timestamp'].'</div></td>';
-									if($row['status']=='New')
-									echo "<td style='background-color: #FF0000;'>".$row['status']."</td>"; 
-									else if($row['status']=='Need later followup')
-									echo "<td style='background-color: #008000;'>".$row['status']."</td>"; 
-									else
-									echo '<td><div align="left">'.$row['status'].'</div></td>';
-									
-									
-									
-									echo '<td><div align="center"><a rel="facebox" href="incidencedetails.php?id='.$row['incident_report_id'].'">Details</a>|<a rel="facebox" href="letspush.php?id='.$row['incident_report_id'].'">Followup</a></div></td>';
+									echo '<td><div align="center"><a rel="facebox" href="edituser.php?id='.$row['user_id'].'">edit</a> | <a href="deleteuser.php?id='.$row['user_id'].'" title="Click To Delete">delete</a></div></td>';
 									echo '</tr>';
 								}
 							?> 
 						</tbody>
 					</table>
 				</div>
-				<div id="footer" class="radius-bottom">
+					<div id="footer" class="radius-bottom">
 					
 					<a class="afooter-link" href="">© Copyright 2017 - SafePal/UNFPA</a>
 					
@@ -213,12 +183,12 @@ var del_id = element.attr("id");
 
 //Built a url to send
 var info = 'id=' + del_id;
- if(confirm("Sure you want to delete this update? There is NO undo!"))
+ if(confirm("Sure you want to delete this record? There is NO undo!"))
 		  {
 
  $.ajax({
    type: "GET",
-   url: "deleteroom.php",
+   url: "deleteuser.php",
    data: info,
    success: function(){
    
@@ -237,3 +207,4 @@ return false;
 </script>
 </body>
 </html>
+

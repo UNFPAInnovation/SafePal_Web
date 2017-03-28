@@ -13,7 +13,7 @@ if (a==null || a=="")
 </script>
 
 
-<form action="submitcso.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
+<form action="checkpermission.php" method="post" enctype="multipart/form-data" name="addproduct" onsubmit="return validateForm()">
 CSO Name<br />
   <input name="name" type="text" class="ed" /><br />
 Location<br />
@@ -29,16 +29,19 @@ Location<br />
 			</select><br />
 
 Phone Number<br />
-    <input name="phone" type="text" class="ed"/><br />			<br />
+    <input name="phone" type="text" class="ed"/><br />			
 	Email Address<br />
-    <input name="email" type="text" class="ed"/><br />			<br />
-Status:
+    <input name="email" type="text" class="ed"/><br />			
+Status:<br />
    
 <select name="status" class="ed">
  <option value="Active">Active</option>
   <option value="Closed">Closed</option>
   </select>
- <br /><br />
+ <br />
+  Enter password to confirm Administrative permission<br />
+    <input name="password" type="password" id="qty" class="ed"/><br />
+ <br />
     <input type="submit" name="Submit" value="save" id="button1" />
  
 </form>

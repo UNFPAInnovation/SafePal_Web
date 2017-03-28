@@ -29,6 +29,8 @@
 </head>
 	<?php
 							include('connect.php');
+							
+							
 							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
 							$result = mysql_fetch_array($sql);
 												
@@ -142,7 +144,7 @@
 								<th> Age </th>
 								<th> Incidence</th>
 							
-								<th> Location</th>
+								
 								<th> Details </th>
 							
 								<th> Date</th>
@@ -155,7 +157,11 @@
 						<tbody>
 						<?php
 							include('connect.php');
-							$result = mysql_query("SELECT * FROM incident_report_details ORDER BY incident_report_id DESC");
+							$fname = $_SESSION['fname'];
+							
+							$queryfname = mysql_query("select location FROM users where fullname='$fname'");
+							$resultfname = mysql_fetch_array($queryfname);
+							$result = mysql_query("SELECT * FROM incident_report_details WHERE incident_location= '$resultfname' ORDER BY incident_report_id DESC");
 							while($row = mysql_fetch_array($result))
 								{
 									echo '<tr class="record">';
@@ -167,7 +173,6 @@
 									echo '<td><div align="left">'.$row['survivor_date_of_birth'].'</div></td>'; 
 									echo '<td><div align="left">'.$row['incident_type'].'</div></td>';
 									
-									echo '<td><div align="left">'.$row['incident_location'].'</div></td>'; 
 									echo '<td><div align="left">'.$row['incident_description'].'</div></td>';
 								
 									echo '<td><div align="left">'.$row['report_timestamp'].'</div></td>';

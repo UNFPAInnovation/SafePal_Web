@@ -102,7 +102,19 @@
 							<span class="submenu-arrow"></span>
 						</a>
 					</li>
-					
+					<li>
+						<a href="myprofile.php">
+							<img alt="Users" src="img/m-users.png" title='manage users'>
+							<span>My profile</span>
+							<span class="submenu-arrow"></span>
+						</a>
+					</li>
+					<li>
+						<a href="myincidents.php">
+							<img alt="Newsletter" src="img/re.png" title='View New Incidents'>
+							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>My Assignments</span>
+						</a>
+					</li> 
 					<div id="details">
 					
 					<div class="tcenter" style="margin-left:-20%">
@@ -169,10 +181,9 @@
 					</table>
 				</div>
 				<div id="footer" class="radius-bottom">
-					2016 ©
-					<a class="afooter-link" href="">Admin Panel - SafePal</a>
-					by
-					<a class="afooter-link" href="">UNFPA</a>
+					
+					<a class="afooter-link" href="">© Copyright 2017 - SafePal/UNFPA</a>
+					
 				</div>
 				<div class="clearfix"></div>
 			</div>

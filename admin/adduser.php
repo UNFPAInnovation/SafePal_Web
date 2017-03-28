@@ -44,6 +44,11 @@ if (a==null || a=="")
 			}			
 			?>
 			</select><br />
+		
+
+  Enter password to confirm Administrative permission<br />
+    <input name="password" type="password" id="qty" class="ed"/><br />
+  <br />
     
  
     <input type="submit" name="Submit" value="save" id="button1" />
