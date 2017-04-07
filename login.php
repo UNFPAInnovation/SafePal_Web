@@ -1,144 +1,335 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="shortcut icon" href="images/safe.png" type="image/x-icon">
-</head>
-<title>SafePal</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body id="myPage">
-
-<link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-   <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  <script src="admin/src/report/facebox.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('a[rel*=facebox]').facebox({
-        loadingImage : 'src/loading.gif',
-        closeImage   : 'src/closelabel.png'
-      })
-    })
-  </script>
-
-
-<div class="w3-relative w3-pink" id="beforemenu">
-  <img src="images/safe.png" alt="boat" style="width:10%;min-height:85px;max-height:20px;">
-  <div class="w3-display-middle" style="height:632px;"> 
-	<h2><b>SAFEPAL WEB REPORTER</b></h2>
-		
-  </div>
-</div>
-
-<!-- Navbar -->
-<div class="w3-absolute w3-gray" id="navDemo">
- <ul class="w3-navbar w3-theme-d2 w3-left-align w3-gray">
-  <li class="w3-hide-medium w3-hide-large w3-opennav w3-right w3-gray">
-    <a class="w3-hover-cyan w3-theme-d2 w3-gray" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  </li>
-  <li><a href="index.php" class="w3-teal"><i class="fa fa-home w3-margin-right"></i>SafePal</a></li>
-  <li class="w3-hide-small"><a href="#service" class="w3-hover-cyan">Service Providers</a></li>
-  <li class="w3-hide-small"><a href="#footer" class="w3-hover-cyan">Follow Us</a></li>
-  <li class="w3-hide-small w3-dropdown-hover">
-    <a href="javascript:void(0);" title="Download">Download <i class="fa fa-caret-down"></i></a>     
-    <div class="w3-dropdown-content w3-gray w3-card-4">
-      <a href="https://play.google.com/apps/testing/com.unfpa.safepal">Get Mobile Version</a>
-      
-    </div>
-  </li>
- </ul>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-hide w3-gray w3-hide-large w3-hide-medium w3-gray">
-    <ul class="w3-navbar w3-left-align w3-theme">
-      <li><a href="#service">Service Providers</a></li>
-      <li class="w3-dropdown-hover">
-      <a href="javascript:void(0);" title="Download">Download <i class="fa fa-caret-down"></i></a>     
-      <div class="w3-dropdown-content w3-light-gray w3-card-4">
-        <a href="https://play.google.com/apps/testing/com.unfpa.safepal">Get Mobile Version</a>
-        
-        
-      </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<!-- Image Header -->
-<div class="w3-display-container w3-animate-opacity">
-  <img src="images/banner.jpg" alt="boat" style="width:100%;min-height:320px;max-height:480px;">
-  <div class="w3-display-middle" style="height:300px;"> 
+<html lang="en">
 
 	
-  </div>
+<head>
 
-</div>
-    <div style="left: 550px; height: auto; top: 90px; width: 260px; position: absolute; z-index:4;" >
+    <meta charset="UTF-8">
+    <meta name="author" content="KeyDesign" />
+    <meta name="description" content="AppSperia - App Landing Page" />
+    <meta name="keywords" content="AppSperia , Landing page, Template, App, Mobile, Android, iOS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- SITE TITLE -->
+    <title>SafePal | Report. Confidentially</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- WEB FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700' rel='stylesheet' type='text/css'>
+   
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+   
+    <!-- JQUERY -->
+    <script src="ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body> 
+    <!--sa poip up-->
+ 
+    
+  
+    <!-- PRELOADER -->
+    <div id="preloader"><img src="images/logo.png" alt=""></div>
+
+    <!-- MAIN NAV -->
+    <a id="main-nav" href="#sidr"><span class="flaticon-menu9"></span></a>
+    <div id="sidr" class="sidr">
+        
+        <!-- MAIN NAV LOGO -->
+        <a href="#" id="menu-logo"><img src="images/logo.png" alt=""></a>
+        
+        <!-- MAIN NAV LINKS -->
+        <ul>
+            <li><a href="#Home" ><span class="icons flaticon-house3"></span>Home</a>
+            </li>
+            <li><a href="#Features" ><span class="icons flaticon-drawer1"></span>Features</a>
+            </li>
+            <li><a href="#About" ><span class="icons flaticon-cursor7"></span>About</a>
+            </li>
+            <li><a href="#Screenshots" ><span class="icons flaticon-camera19"></span>Screenshots</a>
+            </li>
+            <li><a href="#Download" ><span class="icons flaticon-download11"></span>Download</a>
+            </li>
+            <li><a href="#Contact" ><span class="icons flaticon-small72"></span>Contact</a>
+            </li>
+        </ul>
+        <!-- END MAIN NAV LINKS -->
+    </div>
+    <!-- END MAIN NAV -->
+    
+    <!-- PAGE LOGO -->
+    <div class="wrap">
+        <div id="logo">
+            <a href="#"><img src="images/logo.png" alt=""> </a>
+        </div>
+    </div>
+    <!-- END PAGE LOGO -->
+
+    <!-- LANDING PAGE CONTENT -->
+    <div id="fullpage">
+        
+        <!-- RIGHT HAND & PHONE MOCK-UP IMAGES -->
+        <div class="wrap">
+            <div class="section-image"> 
+            <!-- Home IMAGE --><img src="images/0101.jpg" alt="">
+            <!-- Features IMAGE --><img src="images/02.jpg" alt="">
+            <!-- About IMAGE --><img src="images/03.jpg" alt="">
+            <!-- Screenshots IMAGE --><img src="images/04.jpg" alt="">
+            <!-- Download IMAGE --><img src="images/05.jpg" alt="">
+            <!-- Contact IMAGE --><img src="images/08.jpg" alt="">
+            </div>
+            <div id="hand"></div>
+        </div>
+        <!-- END RIGHT HAND & PHONE MOCK-UP -->
+        
+
+        <!-- SECTION HOME -->
+        <div class="section " id="section0">
+            <div class="wrap">
+                <div class="box">
+                    <!-- SECTION HOME CONTENT -->
+                    <h1>Confidentially report <strong>Gender Based Violence </strong></h1>
+                    <p>Report Gender Based violence case and get linked to the nearest service providers for help
+                    <br> Now available on the App Store and Play Store!</p> </div>
+					 <div style="left: 400px; height: auto; top: -20px; width: 260px; position: absolute; z-index:4;" >
     	          			  
-			  <div  style="left: 400px; height: auto; top: 23px; width: 260px; position: absolute; z-index:4;">
+			  <div  style="left: 400px; height: auto; top: 37px; width: 260px; position: absolute; z-index:4;">
 					
 					<h2 class="accordion-header" style="height: 18px; margin-bottom: 15px; ">Login</h2>
 					<br>
 					<div style="margin-bottom: 15px;">
 						<form action="loginHandler.php" method="post" style="margin-bottom:none;">
-						<span style="margin-right: 11px;">Username: <input type="text" name="user" style="width: 190px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br>
-						<span style="margin-right: 11px;">Password: <input type="password" name="password" style="width: 190px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br><br>
+						<span style="margin-right: 11px;">Username: <input type="text" name="user" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br>
+						<span style="margin-right: 11px;">Password: <input type="password" name="password" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br><br>
 						<input type="submit" id="submit" value="login" style="height: 34px; margin-left: 15px; width: 191px; padding: 5px; border: 3px double rgb(204, 204, 204);" /><br><br>
-			
-				
-						
 						</form>
 						
 					</div>
 				</div>
         </div>
-		
+                    <!-- END SECTION HOME CONTENT -->
+                    <a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Now</a> 
+                    <a rel="facebox2" href="reportingincidenceformyself.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Report for Self</a> 
+					 <a rel="facebox2" href="reportingincidenceforfriend.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Report for Friend</a> 
+					 
+				
+            </div>
+        </div>
+        <!-- END SECTION HOME -->
+
+        <!-- SECTION FEATURES -->
+        <div class="section " id="section1">
+            <div class="wrap">
+                <div class="box">
+                    <!-- SECTION FEATURES CONTENT -->
+                    <h2><strong>Amazing</strong> Features</h2>
+                    <p>with the power of reporting GBV cases in your smart phone, safePal, your digital friend</p>
+                    <ul class="features">
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-desktop1"></span> Confidential Reporting<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-desktop1"></span>Ability to submit your case without your identity disclosed to anyone. You are safe</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-small62"></span> Quick Referrals<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-small62"></span>Get the nearest help from the service providers just next door from your location.</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-adjust3"></span>Ghost Mode<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-adjust3"></span>Incase anyone finds you reporting, Just press the stop button to either close the application or uninstall it</span></span></span></a> </li>
+                    </ul>
+                    <ul class="features">
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-interface19"></span> All platforms <span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-interface19"></span>NO NEED for extra hardware now available on web and Android.</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-outlined3"></span>Secure<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-outlined3"></span>Your information is secure with us.</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-lightbulb"></span> Child Help line 116<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-lightbulb"></span>By calling 116 (on all telephone networks), anyone can report any case of child abuse.</span></span></span></a> </li>
+                    </ul>
+                    <!-- END SECTION FEATURES CONTENT -->
+                </div>
+            </div>
+        </div>
+        <!-- END SECTION FEATURES -->
+
+        <!-- SECTION ABOUT -->
+        <div class="section" id="section2">
+            <div class="wrap">
+                <div class="box">
+                    <!-- SECTION ABOUT CONTENT -->
+                    <h2>About <strong>safe</strong>Pal</h2>
+                    <div class="tabs tabs-style-linemove">
+                        <!-- TABS LINKS -->
+                        <nav>
+                            <ul>
+                                <li><a href="#section-linemove-1"><span class="icon flaticon-adjust3"></span><span> Report Cases</span></a>
+                                </li>
+                                <li><a href="#section-linemove-2"><span class="icon flaticon-lightbulb"></span><span> Know Us</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- END TABS LINKS -->
+
+                        <!-- TABS CONTENT -->
+                        <div class="content-wrap">
+                           
+                            <!-- TAB 1 -->
+                            <section id="section-linemove-1">
+                                <h4>Make sure you get the help you need quickly incase of any Gender Based Violence situation.</h4>
+                                <ul class="features">
+                                    <li><a class="tooltip" href="#"><span class="icon flaticon-desktop1"></span> Report for self</a> </li>
+                                </ul>
+                                <ul class="features">
+
+                                    <li><a class="tooltip" href="#"><span class="icon flaticon-desktop1"></span> Report for a friend</a> </li>
+                                </ul>
+                                
+                            </section>
+
+                             <!-- TAB 2 -->
+                            <section id="section-linemove-2">
+                                <h4><span class="icon flaticon-lightbulb"></span> What is safePal?</h4>
+                                <p>Safe Pal is a platform that young people (14-25 year olds) can use to anonymously report cases of GBV and get linked to the nearest service providers for help. Service providers include health centers, Service providers providing psychosocial support and legal education and mediation, Judiciary, Gender Based Violence (GBV) safe shelters, police and district local government department for community development and probation office.</p>
+                            </section>
+
+                                                    </div>
+                         <!-- END TABS CONTENT -->                            
+
+                    <!-- END SECTION ABOUT -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END SECTION ABOUT -->
+
+    
+              
+        <!-- END SECTION CLIENTS -->
+
+
+        <!-- SECTION SCREENSHOTS -->
+        <div class="section" id="section5">
+            <div class="wrap">
+                <div class="box">
+                    <div class="fp-tableCell screenshots-content">
+                        <!-- SECTION SCREENSHOTS CONTENT -->
+                        <h2>Screenshots</h2>
+                        <ul class="features">
+                            
+                            <li><a class="tooltip"><span class="icon flaticon-arrow96"></span> navigate screnshots using side arrows or caption bullets</a> </li>
+                          
+                        </ul>
+                         <!-- END SECTION SCREENSHOTS CONTENT -->
+                    </div>
+                   
+                </div>
+                <div class="screenshots-wrapper">
+
+                    <!-- SECTION SCREENSHOTS IMAGES -->
+                    <div class="slide" id="slide1" data-anchor="slide1"> <img src="images/0101.jpg" alt=""> </div>
+                    <div class="slide" id="slide2" data-anchor="slide2"> <img src="images/02.jpg" alt=""> </div>
+                    <div class="slide" id="slide3" data-anchor="slide3"> <img src="images/05.jpg" alt=""> </div>
+                    <div class="slide" id="slide4" data-anchor="slide4"> <img src="images/08.jpg" alt=""> </div>
+                    <!-- END SECTION SCREENSHOTS IMAGES -->
+                </div>
+            </div>
+        </div>
+        <!-- END SECTION SCREENSHOTS -->
+
+
+     
+        <!-- SECTION DOWNLOAD -->
+        <div class="section" id="section7" data-anchor="Download">
+            <div class="wrap">
+                <div class="box">
+                    <!-- SECTION DOWNLOAD CONTENT-->
+                    <h2><strong>Download</strong> the app</h2>
+                    <p>Report Gender Based violence case and get linked to the nearest service providers for help.
+                    <br> Now available on the App Store and Play Store!</p> 
+                    
+                    <!-- DOWNLOAD PLAYSTORE-->
+                    <a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Play Store</a> 
+                   
+                    <!-- END SECTION DOWNLOAD -->
+                </div>
+            </div>
+        </div>
+        <!-- END SECTION DOWNLOAD -->
+
+
+        <!-- SECTION CONTACT -->
+        <div class="section" id="section8">
+            <div class="wrap">
+                <div class="box">
+                    <!-- SECTION CONTACT CONTENT-->
+                    <h2><strong>Get</strong> in touch</h2>
+                    <ul class="features">
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-telephone1"></span> Call Us now<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-telephone1"></span>Support: +256 773.596.416 <br>Manager: +256 754.437.225 </span></span></span></a> </li>
+                        <li><span class="tooltip"><span class="icon flaticon-map5"></span>See our location<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-map5"></span>UNFPA Baskerville Avenue, Kampala Ugandas
+                            <br><a href="https://www.google.com/maps/dir/0.3344,32.6013/" target="_blank">View Map</a>
+                            </span>
+                            </span>
+                            </span>
+                        </span>
+                        </li>
+                    </ul>
+                    <ul class="features">
+                        <li><span class="tooltip"><span class="icon flaticon-cursor7"></span>Official Website <span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-cursor7"></span>
+                            <br> <a href="http://digitalid.co.ug/" target="_blank">www.safepal.co</a>
+                            </span>
+                            </span>
+                            </span>
+                            </span>
+                        </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-mail9"></span> Send Email<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-mail9"></span>contact@safepal.co<br>report@safepal.co<br>team@safepal.co</span></span></span></a> </li>
+                    </ul>
+
+                   <!-- SECTION CONTACT FORM-->
+                  <!--  <form role="form" method="post" id="contact-form">
+                        <input type="text" placeholder="Name" name="Name" id="Name" required>
+                        <input type="email" placeholder="Email" name="Email" id="Email" required>
+                        <input type="text" placeholder="Phone" name="Phone" id="Phone">
+                        <input type="text" placeholder="Subject" name="Subject" id="Subject">
+                        <textarea placeholder="Message" name="Message" id="Message" required></textarea>
+                        <button type="submit" id="submit">Send</button>
+                        <div id="success"></div>
+                    </form> -->
+                <!-- END SECTION CONTACT --> 
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- SECTION CONTACT -->
 
 
+    <!-- SOCIAL ICONS -->
+    <div class="wrap">
+        <div id="social-icons">
+            <ul>
+                <li><a href="#"><i class="flaticon-facebook6"></i></a> </li>
+                <li><a href="#"><i class="flaticon-social19"></i></a> </li>
+                <li><a href="#"><i class="flaticon-google16"></i></a> </li>
+                <li><a href="#"><i class="flaticon-social40"></i></a> </li>
+                <li><a href="#"><i class="flaticon-social7"></i></a> </li>
+                <li><a href="#"><i class="flaticon-logo3"></i></a> </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END SOCIAL ICONS -->
 
-<!-- Footer -->
-<div id="footer">
-<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-  <h4>Follow Us</h4>
-  <a class="w3-btn-floating w3-teal" href="javascript:void(0)" title="Facebook: @SafePalapp"><i class="fa fa-facebook"></i></a>
-  <a class="w3-btn-floating w3-teal" href="javascript:void(0)" title="Twitter: @SafePalapp "><i class="fa fa-twitter"></i></a>
-  <a class="w3-btn-floating w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin: @SafePalapp"><i class="fa fa-linkedin"></i></a>
-  <a class="w3-btn-floating w3-teal" href="https://play.google.com/apps/testing/com.unfpa.safepal" title="Google Play: @SafePalapp"><i class="fa fa-play"></i></a>
-  <p>&#169;SafePal</p>
 
-  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
-    <a class="w3-btn w3-theme" href="#myPage"><span class="w3-xlarge">
-    <i class="fa fa-chevron-circle-up"></i></span></a>
-  </div>
-</footer>
-</div>
-<!-- Script For Side Navigation -->
+    <!-- SCRIPTS -->
+    <script src="js/jquery.easings.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/cbpFWTabs.js"></script>
+    <script src="js/jquery.sidr.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!--<script type="text/javascript" src="js/video.js"></script> -->
 <script>
-function w3_open() {
-    var x = document.getElementById("mySidenav");
-    x.style.width = "300px";
-    x.style.textAlign = "center";
-    x.style.fontSize = "40px";
-    x.style.paddingTop = "10%";
-    x.style.display = "block";
-}
-function w3_close() {
-    document.getElementById("mySidenav").style.display = "none";
-}
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
 
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+  ga('create', 'UA-60776023-1', 'auto');
+  ga('send', 'pageview');
+
 </script>
 
+
+ 
 </body>
+
 </html>

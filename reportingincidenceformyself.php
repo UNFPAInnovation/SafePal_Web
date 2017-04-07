@@ -60,8 +60,8 @@ height: 34px;
 		  
 		  <input name="age" id="age" type="text" class="ed" size="23px"/></td>
   </tr>
-<tr><td>Are you a Boy or Girl:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<tr><td>Are you a Boy or Girl:
+
  <select name="sex" class="ed">
  <option value="Male">Boy</option>
   <option value="Female">Girl</option></td> </tr>
