@@ -33,6 +33,9 @@
 							
 							$sql = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
 							$result = mysql_fetch_array($sql);
+							
+							$sql1 = mysql_query("SELECT COUNT(incident_report_id) from  incident_report_details WHERE status='New'");
+							$result1 = mysql_fetch_array($sql1);
 												
 												?> 		
 <body>
@@ -114,7 +117,7 @@
 					<li>
 						<a href="myincidents.php">
 							<img alt="Newsletter" src="img/re.png" title='View New Incidents'>
-							<span><font color="red" size="1px"> <?php echo $result[0]; ?> </font>My Assignments</span>
+							<span><font color="red" size="1px"> <?php echo $result1[0]; ?> </font>My Assignments</span>
 						</a>
 					</li> 
 					<div id="details">
