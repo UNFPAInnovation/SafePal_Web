@@ -46,8 +46,7 @@
         <ul>
             <li><a href="#Home" ><span class="icons flaticon-house3"></span>Home</a>
             </li>
-            <li><a href="#Features" ><span class="icons flaticon-drawer1"></span>Features</a>
-            </li>
+            
             <li><a href="#About" ><span class="icons flaticon-cursor7"></span>About</a>
             </li>
             <li><a href="#Screenshots" ><span class="icons flaticon-camera19"></span>Screenshots</a>
@@ -75,9 +74,9 @@
         <!-- RIGHT HAND & PHONE MOCK-UP IMAGES -->
         <div class="wrap">
             <div class="section-image"> 
-            <!-- Home IMAGE --><img src="images/0101.jpg" alt="">
-            <!-- Features IMAGE --><img src="images/02.jpg" alt="">
-            <!-- About IMAGE --><img src="images/03.jpg" alt="">
+            <!-- Home IMAGE --><img src="images/05.jpg" alt="">
+            <!-- Features IMAGE --><img src="images/0101.jpg" alt="">
+            <!-- About IMAGE --><img src="images/0101.jpg" alt="">
             <!-- Screenshots IMAGE --><img src="images/04.jpg" alt="">
             <!-- Download IMAGE --><img src="images/05.jpg" alt="">
             <!-- Contact IMAGE --><img src="images/08.jpg" alt="">
@@ -88,33 +87,16 @@
         
 
         <!-- SECTION HOME -->
-        <div class="section " id="section0">
+       <div class="section " id="section0">
             <div class="wrap">
                 <div class="box">
                     <!-- SECTION HOME CONTENT -->
-                    <h1>Confidentially report <strong>Gender Based Violence </strong></h1>
-                    <p>Report Gender Based violence case and get linked to the nearest service providers for help
-                    <br> Now available on the App Store and Play Store!</p> </div>
-					 <div style="left: 400px; height: auto; top: -20px; width: 260px; position: absolute; z-index:4;" >
-    	          			  
-			  <div  style="left: 400px; height: auto; top: 37px; width: 260px; position: absolute; z-index:4;">
-					
-					<h2 class="accordion-header" style="height: 18px; margin-bottom: 15px; ">Login</h2>
-					<br>
-					<div style="margin-bottom: 15px;">
-						<form action="loginHandler.php" method="post" style="margin-bottom:none;">
-						<span style="margin-right: 11px;">Username: <input type="text" name="user" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br>
-						<span style="margin-right: 11px;">Password: <input type="password" name="password" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br><br>
-						<input type="submit" id="submit" value="login" style="height: 34px; margin-left: 15px; width: 191px; padding: 5px; border: 3px double rgb(204, 204, 204);" /><br><br>
-						</form>
-						
-					</div>
-				</div>
-        </div>
+                    <h1>Reliably Monitor Gender Based Violence Incidences </h1>
+                    <p>Register Users, CSOs, and other settings,View Reported Incidences and their status!</p> </div>
                     <!-- END SECTION HOME CONTENT -->
-                    <a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Now</a> 
-                    <a rel="facebox2" href="reportingincidenceformyself.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Report for Self</a> 
-					 <a rel="facebox2" href="reportingincidenceforfriend.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Report for Friend</a> 
+                    <a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Mobile App</a> 
+                    <a href="#About" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Login</a> 
+					 <a href="index.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Home</a> 
 					 
 				
             </div>
@@ -138,57 +120,66 @@
                         <li><a class="tooltip" href="#"><span class="icon flaticon-outlined3"></span>Secure<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-outlined3"></span>Your information is secure with us.</span></span></span></a> </li>
                         <li><a class="tooltip" href="#"><span class="icon flaticon-lightbulb"></span> Child Help line 116<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-lightbulb"></span>By calling 116 (on all telephone networks), anyone can report any case of child abuse.</span></span></span></a> </li>
                     </ul>
+					
+					<a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Now</a> 
+                    <a href="index.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Home</a> 
+					
                     <!-- END SECTION FEATURES CONTENT -->
+					
+					 <div  style="left: 800px; height: auto; top: -20px; width: 260px; position: absolute; z-index:4;">
+					
+					<h2 class="accordion-header" style="height: 18px; margin-bottom: 15px; ">Login</h2>
+					<br>
+					<div style="margin-bottom: 15px;">
+						<form action="loginHandler.php" method="post" style="margin-bottom:none;">
+						<span style="margin-right: 11px;">Username: <input type="text" name="user" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br>
+						<span style="margin-right: 11px;">Password: <input type="password" name="password" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br><br>
+						<input type="submit" id="submit" value="login" style="height: 34px; margin-left: 15px; width: 191px; padding: 5px; border: 3px double rgb(204, 204, 204);" /><br><br>
+						</form>
+						
+					</div>
+				</div>
                 </div>
             </div>
         </div>
         <!-- END SECTION FEATURES -->
 
         <!-- SECTION ABOUT -->
-        <div class="section" id="section2">
+       <div class="section " id="section2">
             <div class="wrap">
                 <div class="box">
-                    <!-- SECTION ABOUT CONTENT -->
-                    <h2>About <strong>safe</strong>Pal</h2>
-                    <div class="tabs tabs-style-linemove">
-                        <!-- TABS LINKS -->
-                        <nav>
-                            <ul>
-                                <li><a href="#section-linemove-1"><span class="icon flaticon-adjust3"></span><span> Report Cases</span></a>
-                                </li>
-                                <li><a href="#section-linemove-2"><span class="icon flaticon-lightbulb"></span><span> Know Us</span></a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- END TABS LINKS -->
-
-                        <!-- TABS CONTENT -->
-                        <div class="content-wrap">
-                           
-                            <!-- TAB 1 -->
-                            <section id="section-linemove-1">
-                                <h4>Make sure you get the help you need quickly incase of any Gender Based Violence situation.</h4>
-                                <ul class="features">
-                                    <li><a class="tooltip" href="#"><span class="icon flaticon-desktop1"></span> Report for self</a> </li>
-                                </ul>
-                                <ul class="features">
-
-                                    <li><a class="tooltip" href="#"><span class="icon flaticon-desktop1"></span> Report for a friend</a> </li>
-                                </ul>
-                                
-                            </section>
-
-                             <!-- TAB 2 -->
-                            <section id="section-linemove-2">
-                                <h4><span class="icon flaticon-lightbulb"></span> What is safePal?</h4>
-                                <p>Safe Pal is a platform that young people (14-25 year olds) can use to anonymously report cases of GBV and get linked to the nearest service providers for help. Service providers include health centers, Service providers providing psychosocial support and legal education and mediation, Judiciary, Gender Based Violence (GBV) safe shelters, police and district local government department for community development and probation office.</p>
-                            </section>
-
-                                                    </div>
-                         <!-- END TABS CONTENT -->                            
-
-                    <!-- END SECTION ABOUT -->
-                    </div>
+                    <!-- SECTION FEATURES CONTENT -->
+                    <h2><strong>Amazing</strong> Features</h2>
+                    <p>with the power of reporting GBV cases in your smart phone, safePal, your digital friend</p>
+                    <ul class="features">
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-desktop1"></span> Confidential Reporting<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-desktop1"></span>Ability to submit your case without your identity disclosed to anyone. You are safe</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-small62"></span> Quick Referrals<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-small62"></span>Get the nearest help from the service providers just next door from your location.</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-adjust3"></span>Ghost Mode<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-adjust3"></span>Incase anyone finds you reporting, Just press the stop button to either close the application or uninstall it</span></span></span></a> </li>
+                    </ul>
+                    <ul class="features">
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-interface19"></span> All platforms <span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-interface19"></span>NO NEED for extra hardware now available on web and Android.</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-outlined3"></span>Secure<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-outlined3"></span>Your information is secure with us.</span></span></span></a> </li>
+                        <li><a class="tooltip" href="#"><span class="icon flaticon-lightbulb"></span> Child Help line 116<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-lightbulb"></span>By calling 116 (on all telephone networks), anyone can report any case of child abuse.</span></span></span></a> </li>
+                    </ul>
+					
+					<a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Now</a> 
+                    <a href="index.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Home</a> 
+					
+                    <!-- END SECTION FEATURES CONTENT -->
+					
+					 <div  style="left: 800px; height: auto; top: -20px; width: 260px; position: absolute; z-index:4;">
+					
+					<h2 class="accordion-header" style="height: 18px; margin-bottom: 15px; ">Login</h2>
+					<br>
+					<div style="margin-bottom: 15px;">
+						<form action="loginHandler.php" method="post" style="margin-bottom:none;">
+						<span style="margin-right: 11px;">Username: <input type="text" name="user" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br>
+						<span style="margin-right: 11px;">Password: <input type="password" name="password" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br><br>
+						<input type="submit" id="submit" value="login" style="height: 34px; margin-left: 15px; width: 191px; padding: 5px; border: 3px double rgb(204, 204, 204);" /><br><br>
+						</form>
+						
+					</div>
+				</div>
                 </div>
             </div>
         </div>

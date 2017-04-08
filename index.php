@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--sa poip up-->
+<link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+   <script src="admin/lib/jquery.js" type="text/javascript"></script>
+  <script src="admin/src/report/facebox.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox2]').facebox({
+        loadingImage : 'src/loading.gif',
+        closeImage   : 'src/closelabel.png'
+      })
+    })
+  </script>
 	
 <head>
 
@@ -312,6 +323,7 @@
 
 </script>
 
+<!--sa poip up-->
 
  
 </body>

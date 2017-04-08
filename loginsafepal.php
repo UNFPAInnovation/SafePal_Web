@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--sa poip up-->
-<link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-   <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  <script src="admin/src/report/facebox.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('a[rel*=facebox2]').facebox({
-        loadingImage : 'src/loading.gif',
-        closeImage   : 'src/closelabel.png'
-      })
-    })
-  </script>
 
+	
 <head>
+
     <meta charset="UTF-8">
     <meta name="author" content="KeyDesign" />
     <meta name="description" content="AppSperia - App Landing Page" />
@@ -38,18 +28,9 @@
 </head>
 
 <body> 
-    <!--sa poip up
-<link href="admin/src/report/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-   <script src="admin/lib/jquery.js" type="text/javascript"></script>
-  <script src="admin/src/report/facebox.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function($) {
-      $('a[rel*=facebox2]').facebox({
-        loadingImage : 'src/loading.gif',
-        closeImage   : 'src/closelabel.png'
-      })
-    })
-  </script>  -->
+    <!--sa poip up-->
+ 
+    
   
     <!-- PRELOADER -->
     <div id="preloader"><img src="images/logo.png" alt=""></div>
@@ -63,7 +44,7 @@
         
         <!-- MAIN NAV LINKS -->
         <ul>
-            <li><a href="index.php" ><span class="icons flaticon-house3"></span>Home</a>
+            <li><a href="#Home" ><span class="icons flaticon-house3"></span>Home</a>
             </li>
             <li><a href="#Features" ><span class="icons flaticon-drawer1"></span>Features</a>
             </li>
@@ -94,8 +75,8 @@
         <!-- RIGHT HAND & PHONE MOCK-UP IMAGES -->
         <div class="wrap">
             <div class="section-image"> 
-            <!-- Home IMAGE --><img src="images/01.jpg" alt="">
-            <!-- Features IMAGE --><img src="images/02.jpg" alt="">
+            <!-- Home IMAGE --><img src="images/05.jpg" alt="">
+            <!-- Features IMAGE --><img src="images/0101.jpg" alt="">
             <!-- About IMAGE --><img src="images/03.jpg" alt="">
             <!-- Screenshots IMAGE --><img src="images/04.jpg" alt="">
             <!-- Download IMAGE --><img src="images/05.jpg" alt="">
@@ -107,33 +88,20 @@
         
 
         <!-- SECTION HOME -->
-        <div class="section " id="section0">
+       <div class="section " id="section0">
             <div class="wrap">
                 <div class="box">
                     <!-- SECTION HOME CONTENT -->
                     <h1>Confidentially report <strong>Gender Based Violence </strong></h1>
-                    <p><?php
-							include('connect.php');
-							$result = mysql_query("SELECT * FROM incident_report_details ORDER BY incident_report_id DESC LIMIT 1");
-							while($row = mysql_fetch_array($result))
-								{
-		echo  '<p align="center" > <strong align="right" style="color:red;"><font size="5">Thank you very much, the incident has been Recorded with Reference number SPW'.$row['incident_report_id'].'</font> </strong></p>';
-				}
-							?> 
-				</div>
+                    <p>Report Gender Based violence case and get linked to the nearest service providers for help
+                    <br> Now available on the App Store and Play Store!</p> </div>
                     <!-- END SECTION HOME CONTENT -->
-                    <a href="index.php" class="simple-button playstore-button"><span class="icon playstore"></span>Home</a> 
-                    <a rel="facebox2" href="reportingincidenceformyself.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Report for Self</a> 
-					 <a rel="facebox2" href="reportingincidenceforfriend.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Report for Friend</a> 
+                    <a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Now</a> 
+                    <a href="loginsafepal.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Login</a> 
+					 <a href="index.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Home</a> 
 					 
 				
             </div>
-				<div id="marketing" class="container" style="margin-top: -8%;margin-left: -20%;color:#D71D5B;size:150px";align="center">
-			
-					
-													 
-
-			</div>
         </div>
         <!-- END SECTION HOME -->
 
@@ -154,7 +122,25 @@
                         <li><a class="tooltip" href="#"><span class="icon flaticon-outlined3"></span>Secure<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-outlined3"></span>Your information is secure with us.</span></span></span></a> </li>
                         <li><a class="tooltip" href="#"><span class="icon flaticon-lightbulb"></span> Child Help line 116<span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><span class="icon flaticon-lightbulb"></span>By calling 116 (on all telephone networks), anyone can report any case of child abuse.</span></span></span></a> </li>
                     </ul>
+					
+					<a href="#" class="simple-button playstore-button"><span class="icon playstore"></span>Download Now</a> 
+                    <a href="index.php" class="simple-button playstore-button"><span class="icon flaticon-desktop1"></span>Home</a> 
+					
                     <!-- END SECTION FEATURES CONTENT -->
+					
+					 <div  style="left: 800px; height: auto; top: -20px; width: 260px; position: absolute; z-index:4;">
+					
+					<h2 class="accordion-header" style="height: 18px; margin-bottom: 15px; ">Login</h2>
+					<br>
+					<div style="margin-bottom: 15px;">
+						<form action="loginHandler.php" method="post" style="margin-bottom:none;">
+						<span style="margin-right: 11px;">Username: <input type="text" name="user" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br>
+						<span style="margin-right: 11px;">Password: <input type="password" name="password" style="width: 170px; margin-left: 15px; border: 3px double #CCCCCC; padding:5px 10px;"/></span><br><br>
+						<input type="submit" id="submit" value="login" style="height: 34px; margin-left: 15px; width: 191px; padding: 5px; border: 3px double rgb(204, 204, 204);" /><br><br>
+						</form>
+						
+					</div>
+				</div>
                 </div>
             </div>
         </div>
@@ -234,7 +220,7 @@
                 <div class="screenshots-wrapper">
 
                     <!-- SECTION SCREENSHOTS IMAGES -->
-                    <div class="slide" id="slide1" data-anchor="slide1"> <img src="images/01.jpg" alt=""> </div>
+                    <div class="slide" id="slide1" data-anchor="slide1"> <img src="images/0101.jpg" alt=""> </div>
                     <div class="slide" id="slide2" data-anchor="slide2"> <img src="images/02.jpg" alt=""> </div>
                     <div class="slide" id="slide3" data-anchor="slide3"> <img src="images/05.jpg" alt=""> </div>
                     <div class="slide" id="slide4" data-anchor="slide4"> <img src="images/08.jpg" alt=""> </div>
@@ -343,6 +329,9 @@
   ga('send', 'pageview');
 
 </script>
+
+
+ 
 </body>
 
 </html>
