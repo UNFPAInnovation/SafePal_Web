@@ -3,9 +3,18 @@
 //load and connect to MySQL database stuff
 //require("config.inc.php");
 
+/**
+ * [Init Request class]
+ * @param  {[Requests]} ReportsHandler [description]
+ * @return {[array]}                [description]
+ */
 require_once('ReportsHandler/Requests.php');
 Requests::register_autoloader();
 
+/**
+ * [Get token method]
+ * @constructor
+ */
 function GetToken(){
   $token = Requests::get('https://api-safepal.herokuapp.com/api/v1/auth/newtoken', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'));
   $result = get_object_vars(json_decode($token->body));
@@ -17,6 +26,11 @@ function GetToken(){
   return null;
 }
 
+/**
+ * [PostReport Post report to api]
+ * @param       {[array]} $report [associative array of the report/case]
+ * @constructor
+ */
 function PostReport($report){
   $response = Requests::post('https://api-safepal.herokuapp.com/index.php/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
 
@@ -26,11 +40,12 @@ function PostReport($report){
 }
 
 
+//check if $_REQUEST super-global is null or empty
 if (!empty($_REQUEST)) {
-	
+
   //get token
   $token = GetToken();
-	
+
 	//get token code
 	/*$curl1 = curl_init();
 
@@ -46,7 +61,7 @@ curl_setopt_array($curl1, array(
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
     "cache-control: no-cache",
-    "content-type: application/json", 
+    "content-type: application/json",
     "userid: C7rPaEAN9NpPGR8e9wz9bzw"
   ),
 ));
@@ -61,28 +76,28 @@ if ($err1) {
 } else {
   $json = $response1;
 }
-	
+
     $array = json_decode($json, true);
 	$token = $array['token'];
 	//end get token code
-	
-	
-	
-    //Post fields query 
+
+
+
+    //Post fields query
         $age  =  ((date('Y-m-d'))-($_REQUEST['age']));
         $latitude = $_REQUEST['latitude'];
         $longitude = $_REQUEST['longitude'];
         $reporter = $_REQUEST['reporter'];
         $report_source = $_REQUEST['report_source'];
         $type = $_REQUEST['type'];
-        
+
         $location = $_REQUEST['location'];
         $gender = $_REQUEST['gender'];
         $details = $_REQUEST['details'];
         $reportDate = date('Y-m-d');
         //$reporter_relation = $_REQUEST['reporter_relation'];
-    
-	
+
+
 $curl = curl_init();
 
 // curl_setopt($curl, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -101,7 +116,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => "{\r\n              \"token\" : \"$token\",\r\n              \"gender\" : \"$gender\",\r\n              \"age\" : \"$age\",\r\n                            \"reportDate\" : \"$reportDate\",\r\n              \"type\" : \"$type\",\r\n              \"location\" : \"$location\",\r\n              \"details\" : \"$details\",\r\n              \"reporter\" : \"$reporter\",\r\n              \"latitude\" : $latitude,\r\n              \"longitude\" : $longitude,\r\n              \"report_source\" : \"$report_source\"\r\n}\r\n",
   CURLOPT_HTTPHEADER => array(
     "cache-control: no-cache",
-    "content-type: application/json", 
+    "content-type: application/json",
     "userid: C7rPaEAN9NpPGR8e9wz9bzw"
   ),
 ));
@@ -114,6 +129,7 @@ $err = curl_error($curl);
 curl_close($curl); */
 
 
+//results array
 $results = array();
 
 if (!empty($token)) {
@@ -135,7 +151,7 @@ if (!empty($token)) {
       case 'above 24':
         $age = 25;
         break;
-      
+
       default:
          $age = ((date('Y-m-d'))-($_REQUEST['age']));
         break;
@@ -168,13 +184,13 @@ if (empty($results) || $results['status'] != 'success') {
   if (sizeof($array2['csos']) < 1) {
     echo "<h4 align='center'>No CSOs are available in 5km but we've referred your case. Your case number is: ".$array2['casenumber'];
     echo "<br/> Use it to get assistance. <br/> Thank you for using SafePal.</h4>";
-  } 
-  
-  
+  }
+
+
   //print_r($array2);
    //echo $json2;
 //header('location: csos.php');
-  
+
   ?>
   <html lang="en">
 
@@ -229,7 +245,7 @@ if (empty($results) || $results['status'] != 'success') {
     </div>
 </div>
 <!--logo end-->
-    
+
 
 </header>
 <!--header end-->
@@ -249,14 +265,14 @@ if (empty($results) || $results['status'] != 'success') {
                     <span>Report for Myself</span>
                 </a>
             </li>
-                
+
                  <li>
                 <a href="palreport.html">
                     <i class="fa fa-group"></i>
                     <span>Report for friend</span>
                 </a>
             </li>
-        </ul></div>        
+        </ul></div>
 <!-- sidebar menu end-->
     </div>
 </aside>
@@ -274,12 +290,12 @@ if (empty($results) || $results['status'] != 'success') {
                      </header>
                     <div class="panel-body">
                     <div class="adv-table">
-					
+
   <?php echo "Case Number : <span class='label-success'>".$array2['casenumber']."</span><br/>"; ?>
-  
+
   <table  class="display table table-bordered table-striped" id="dynamic-table">
                     <thead>
-                    <tr> 
+                    <tr>
                         <th>Name</th>
                         <th>Location</th>
                         <th>Working hours</th>
@@ -288,7 +304,7 @@ if (empty($results) || $results['status'] != 'success') {
                     </thead>
                     <tbody>
   <tr>
-     
+
     <td align="center"><?php echo $array2["csos"][0]["cso_name"]; ?></td>
     <td align="center"><?php echo $array2["csos"][0]["cso_location"]; ?></td>
     <td align="center"><?php echo $array2["csos"][0]["cso_working_hours"]; ?></td>
@@ -296,7 +312,7 @@ if (empty($results) || $results['status'] != 'success') {
 	 </tr>
 
  <tr>
-     
+
     <td align="center"><?php echo $array2["csos"][1]["cso_name"]; ?></td>
     <td align="center"><?php echo $array2["csos"][1]["cso_location"]; ?></td>
     <td align="center"><?php echo $array2["csos"][1]["cso_working_hours"]; ?></td>
@@ -304,20 +320,20 @@ if (empty($results) || $results['status'] != 'success') {
 	 </tr>
 
  <tr>
-     
+
     <td align="center"><?php echo $array2["csos"][2]["cso_name"]; ?></td>
     <td align="center"><?php echo $array2["csos"][2]["cso_location"]; ?></td>
     <td align="center"><?php echo $array2["csos"][2]["cso_working_hours"]; ?></td>
     <td align="center"><?php echo $array2["csos"][2]["cso_phone_number"]; ?></td>
 	 </tr>
 
-	 
-   
-    
-                                           
+
+
+
+
 											 </tbody>
                     </table>
-					
+
 					 </div>
                     </div>
                 </section>
@@ -332,7 +348,7 @@ if (empty($results) || $results['status'] != 'success') {
 <div class="search-row">
     <input type="text" placeholder="Search" class="form-control">
 </div>
-    
+
     </div>
 <!--right sidebar end-->
 
@@ -366,52 +382,52 @@ if (empty($results) || $results['status'] != 'success') {
 <!--dynamic table initialization -->
 <script src="js/dynamic_table_init.js"></script>
 
-  
+
 
 </body>
 </html>
 											<?php
 
- 
+
 }
-	
-   
+
+
 } else {
 ?>
 
-<h1>Add Card</h1> 
-		<form action="addreport.php" method="post"> 
-		    age:<br /> 
-		    <input type="text" name="age" placeholder="age" /> 
-		    <br /><br />  
-		     reporter_lat:<br /> 
-		    <input type="text" name="latitude" placeholder=" lat" /> 
-		    <br /><br /> 
-		    reporter_long:<br /> 
-		    <input type="text" name="longitude" placeholder="reporter_long" /> 
+<h1>Add Card</h1>
+		<form action="addreport.php" method="post">
+		    age:<br />
+		    <input type="text" name="age" placeholder="age" />
 		    <br /><br />
-			reported_by:<br /> 
-		    <input type="text" name="reporter" placeholder="self or friend" /> 
+		     reporter_lat:<br />
+		    <input type="text" name="latitude" placeholder=" lat" />
 		    <br /><br />
-            source:<br /> 
-		    <input type="text" name="report_source" placeholder="source" /> 
+		    reporter_long:<br />
+		    <input type="text" name="longitude" placeholder="reporter_long" />
 		    <br /><br />
-            incident_type:<br /> 
-		    <input type="text" name="type" placeholder="incident_type" /> 
+			reported_by:<br />
+		    <input type="text" name="reporter" placeholder="self or friend" />
 		    <br /><br />
-            incident_location:<br /> 
-		    <input type="text" name="location" placeholder="eg school or home" /> 
+            source:<br />
+		    <input type="text" name="report_source" placeholder="source" />
 		    <br /><br />
-            survivor_gender:<br /> 
-		    <input type="text" name="gender" placeholder="survivor_gender" /> 
+            incident_type:<br />
+		    <input type="text" name="type" placeholder="incident_type" />
 		    <br /><br />
-            incident_description:<br /> 
-		    <input type="text" name="details" placeholder="incident_description" /> 
+            incident_location:<br />
+		    <input type="text" name="location" placeholder="eg school or home" />
 		    <br /><br />
-		     
-		    <input type="submit" value="Add report" /> 
-		</form> 		
+            survivor_gender:<br />
+		    <input type="text" name="gender" placeholder="survivor_gender" />
+		    <br /><br />
+            incident_description:<br />
+		    <input type="text" name="details" placeholder="incident_description" />
+		    <br /><br />
+
+		    <input type="submit" value="Add report" />
+		</form>
 	<?php
 }
 
-?> 
+?>
