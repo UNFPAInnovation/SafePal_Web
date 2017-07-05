@@ -291,7 +291,7 @@ if (empty($results) || $results['status'] != 'success') {
                     <div class="panel-body">
                     <div class="adv-table">
 
-  <?php echo "Case Number : <span class='label-success'>".$array2['casenumber']."</span><br/>"; ?>
+  <?php echo "<h3>Safepal Case Number : <b><span style='color:#01a89e'>".$array2['casenumber']."</b></span></h3> <div><b>(Note: You need to save this safepal case number inorder to get help from the service providers below.)<b></div><br/>"; ?>
 
   <table  class="display table table-bordered table-striped" id="dynamic-table">
                     <thead>
@@ -303,33 +303,18 @@ if (empty($results) || $results['status'] != 'success') {
                     </tr>
                     </thead>
                     <tbody>
-  <tr>
-
-    <td align="center"><?php echo $array2["csos"][0]["cso_name"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][0]["cso_location"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][0]["cso_working_hours"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][0]["cso_phone_number"]; ?></td>
-	 </tr>
-
- <tr>
-
-    <td align="center"><?php echo $array2["csos"][1]["cso_name"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][1]["cso_location"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][1]["cso_working_hours"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][1]["cso_phone_number"]; ?></td>
-	 </tr>
-
- <tr>
-
-    <td align="center"><?php echo $array2["csos"][2]["cso_name"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][2]["cso_location"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][2]["cso_working_hours"]; ?></td>
-    <td align="center"><?php echo $array2["csos"][2]["cso_phone_number"]; ?></td>
-	 </tr>
 
 
-
-
+                            <?php
+                            for ($i=0; $i < sizeof($array2['csos']); $i++) {
+                              $val = get_object_vars($array2['csos'][$i]);
+                              echo "<tr>";
+                              echo "<td align='center'>". $val['cso_name']."</td>";
+                              echo "<td align='center'>". $val['cso_location']."</td>";
+                              echo "<td align='center'>". $val['cso_working_hours']."</td>";
+                              echo "<td align='center'>". $val['cso_phone_number']."</td>";
+                              echo "</tr>";
+                            }?>
 
 											 </tbody>
                     </table>
