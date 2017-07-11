@@ -16,7 +16,7 @@ Requests::register_autoloader();
  * @constructor
  */
 function GetToken(){
-  $token = Requests::get('https://api-safepal.herokuapp.com/api/v1/auth/newtoken', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'));
+  $token = Requests::get('http://api.safepal.co/api/v1/auth/newtoken', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'));
   $result = get_object_vars(json_decode($token->body));
 
   if (!empty($result) && $result['token']) {
@@ -32,7 +32,7 @@ function GetToken(){
  * @constructor
  */
 function PostReport($report){
-  $response = Requests::post('https://api-safepal.herokuapp.com/index.php/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
+  $response = Requests::post('http://api.safepal.co/index.php/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
 
   $result = get_object_vars(json_decode($response->body));
 
@@ -50,7 +50,7 @@ if (!empty($_REQUEST)) {
 	/*$curl1 = curl_init();
 
 curl_setopt_array($curl1, array(
-  CURLOPT_URL => "https://api-safepal.herokuapp.com/api/v1/auth/newtoken",
+  CURLOPT_URL => "http://api.safepal.co/api/v1/auth/newtoken",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => TRUE,
   CURLOPT_SSL_VERIFYPEER => false,
@@ -104,7 +104,7 @@ $curl = curl_init();
 // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api-safepal.herokuapp.com/index.php/api/v1/reports/addreport",
+  CURLOPT_URL => "http://api.safepal.co/index.php/api/v1/reports/addreport",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => TRUE,
   CURLOPT_SSL_VERIFYPEER => false,
