@@ -32,20 +32,19 @@ function GetToken(){
  * @constructor
  */
 function PostReport($report){
-  $response = Requests::post('http://api.safepal.co/index.php/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
-
+  $response = Requests::post('http://api.safepal.co/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
+//print_r($report);
+ //exit;
   $result = get_object_vars(json_decode($response->body));
-
   return $result;
 }
-
 
 //check if $_REQUEST super-global is null or empty
 if (!empty($_REQUEST)) {
 
   //get token
   $token = GetToken();
-
+ 
 	//get token code
 	/*$curl1 = curl_init();
 
@@ -160,8 +159,8 @@ if (!empty($token)) {
 
     $data = array(
       'age' => $age,
-      'latitude' => $_REQUEST['latitude'],
-      'longitude' => $_REQUEST['longitude'],
+      'latitude' => (!empty($_REQUEST['latitude']) ? $_REQUEST['latitude'] : 0.00),
+      'longitude' => (!empty($_REQUEST['longitude']) ? $_REQUEST['longitude'] : 0.00),
       'reporter' => $_REQUEST['reporter'],
       'report_source' => $_REQUEST['report_source'],
       'type' => $_REQUEST['type'],
@@ -173,8 +172,9 @@ if (!empty($token)) {
     );
 
     //post case/report
-    $results = PostReport($data);
+   $results = PostReport($data);
   }
+
 
 if (empty($results) || $results['status'] != 'success') {
   echo "<h1 align='center'> Oops! Something went wrong while posting your report. Please try again</h1>";
@@ -416,3 +416,4 @@ if (empty($results) || $results['status'] != 'success') {
 }
 
 ?>
+
