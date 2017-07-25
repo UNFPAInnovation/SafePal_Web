@@ -16,7 +16,7 @@ Requests::register_autoloader();
  * @constructor
  */
 function GetToken(){
-  $token = Requests::get('http://api.safepal.co/api/v1/auth/newtoken', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'));
+  $token = Requests::get('https://api.safepal.co/api/v1/auth/newtoken', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'));
   $result = get_object_vars(json_decode($token->body));
 
   if (!empty($result) && $result['token']) {
@@ -32,7 +32,7 @@ function GetToken(){
  * @constructor
  */
 function PostReport($report){
-  $response = Requests::post('http://api.safepal.co/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
+  $response = Requests::post('https://api.safepal.co/api/v1/reports/addreport', array('userid' => 'C7rPaEAN9NpPGR8e9wz9bzw', 'content-type: application/json'), $report);
 //print_r($report);
  //exit;
   $result = get_object_vars(json_decode($response->body));
