@@ -4,9 +4,9 @@
 	// This is also for the Xampp example,  if you are hosting on your own server,
 	//make the necessary changes (mybringback_travis, etc.)
     $username = "root"; 
-    $password = ""; 
+    $password = "0718392752I@n"; 
     $host = "localhost"; 
-    $dbname = "q"; 
+    $dbname = "safepaldb"; 
 
 
     // UTF-8 is a character encoding scheme that allows you to conveniently store 

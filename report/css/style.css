@@ -153,7 +153,6 @@ a,a:hover,a:focus {
 #sidebar ul li {
     position: relative;
 }
-
 .leftside-navigation,.right-stat-bar{
     height: 100%;
 }
@@ -262,7 +261,7 @@ ul.sidebar-menu li a span {
     display:inline-block;
 }
 ul.sidebar-menu li a {
-    color:#aeb2b7;
+    color:rgba(255, 255, 255, 0.8);
     text-decoration:none;
     display:block;
     padding:18px 0 18px 25px;
@@ -276,7 +275,7 @@ ul.sidebar-menu li a {
 }
 ul.sidebar-menu li a.active,ul.sidebar-menu li a:hover,ul.sidebar-menu li a:focus {
     background:#DA1252;
-    color:#1FB5AD;
+    color:rgba(255, 255, 255, 1);
     display:block;
     -webkit-transition:all 0.3s ease;
     -moz-transition:all 0.3s ease;
