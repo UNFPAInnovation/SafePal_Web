@@ -5748,3 +5748,34 @@ right: -1px;
 .sortable{
     min-height: 400px;;
 }
+
+
+/*
+
+Date picker 
+
+*/
+input.date {
+    position: relative;
+    color: white;
+}
+
+input.date:before {
+    position: absolute;
+    top: 0px; left: 15px;
+    content: attr(data-date);
+    display: inline-block;
+    color: black;
+}
+
+input::-webkit-datetime-edit, input.date::-webkit-inner-spin-button, input.date::-webkit-clear-button {
+    display: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    opacity: 1;
+}
