@@ -5748,3 +5748,51 @@ right: -1px;
 .sortable{
     min-height: 400px;;
 }
+
+
+/*
+
+Date picker 
+
+*/
+input.date {
+    position: relative;
+    color: white;
+}
+
+input.date:before {
+    position: absolute;
+    top: 0px; left: 30px;
+    content: attr(data-date);
+    display: inline-block;
+    color: black;
+    line-height: 50px;
+}
+
+input::-webkit-datetime-edit, input.date::-webkit-inner-spin-button, input.date::-webkit-clear-button {
+    display: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: black;
+    opacity: 1;
+}
+#notify{
+    position: fixed;
+    top:50px;
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    z-index: 10000;
+    left:25%;
+}
+.form-control{
+    height:50px;
+    padding: 0 20px;
+}
+.activeMenu{
+    background-color: rgba(255,255,255,0.3) !important;
+}

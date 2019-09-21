@@ -13,7 +13,7 @@
 
     <!--Core CSS -->
     <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap-reset.css" rel="stylesheet"> -->
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!--icheck-->
@@ -31,7 +31,9 @@
     <link href="js/iCheck/skins/square/yellow.css" rel="stylesheet">
     <link href="js/iCheck/skins/square/purple.css" rel="stylesheet">
   
-  	 <link rel="stylesheet" type="text/css" href="js/bootstrap-datepicker/css/datepicker.css" />
+  	 <!-- <link rel="stylesheet" type="text/css" href="js/bootstrap-datepicker/css/datepicker.css" />
+       <link rel="stylesheet" type="text/css" href="./js/jquery-ui/jquery-ui.min.css" />-->
+       <!-- <link rel="stylesheet" href="./js/datepicker/datepicker.min.css">  -->
 
     <link href="js/iCheck/skins/flat/grey.css" rel="stylesheet">
     <link href="js/iCheck/skins/flat/red.css" rel="stylesheet">
@@ -84,7 +86,7 @@
                     <span>HOME</span>
                 </a>
             </li>
-                 <li>
+                 <li class="activeMenu">
                 <a href="selfreport.html">
                     <i class="fa fa-edit"></i>
                     <span>REPORT FOR MYSELF</span>
@@ -109,16 +111,17 @@
         <!-- page start-->
         <div class="row">
             <div class="col-lg-12">
+                    <div id="notify" class="alert text-center"></div>
                     <section class="panel">
                         <header class="panel-heading">
-                            Report for Myself
+                            <h3 class="page-header">Report for Myself</h3>
                         </header>
                         <div class="panel-body">
-                            <div class="position-center">
-                                <form method="post" action="addreport.php">
+                            <div class="col-md-6 col-sm-12">
+                                <form method="post" id="selfReportForm">
                                 <div class="form-group">
                                     <label for="exampleInputAge">When were you born?</label>
-                                    <input name="age" type="date" class="form-control round-input" id="exampleInputEmail1"  required>
+                                    <input type="date" data-date="Select date" class="form-control round-input date" data-date-format="DD MMMM YYYY" placeholder="Date">
                                     <input type="hidden" id="latitude"  name="latitude" value="32.00">
                                     <input type="hidden" id="longitude" name="longitude" value="0.32" > 
                                     <input name="reporter" type="hidden" value="self_report"/>
@@ -129,7 +132,7 @@
                                     
                                     <div class="form-group">
                                     <label for="exampleInputAge">What happened to you?</label>
-                                    <select name="type" class="form-control input-sm m-bot15" required>
+                                    <select name="type" class="form-control round-input type" required>
                                         <option value="">Click here to choose</option>
                                         <option value="I was raped">I was raped</option>
                                         <option value="I was defiled">I was defiled</option>
@@ -140,7 +143,12 @@
                                     
                                     <div class="form-group">
                                     <label for="exampleInputAge">Where did it happen?</label>
-                                    <input name="location" type="text" class="form-control round-input" id="exampleInputEmail1" placeholder="e.g. school, home" required>
+                                    <input name="location" type="text" class="form-control round-input location" id="exampleInputEmail1" placeholder="e.g. school, home" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputAge">Are you disabled ? If yes, please describe your disability below.</label>
+                                    <input name="disability" type="text" class="form-control round-input disability" placeholder="Type of disability" required>
                                 </div>
                                         <div class="form-group">
                                         <label for="genderselection">Are you a girl or a  boy?</label>
@@ -164,17 +172,19 @@
                                         <div class="form-group">
                                 <label>Tell the story of the incident</label>
                                 <div >
-                                    <textarea name="details" class="form-control" rows="2" required></textarea>
+                                    <textarea name="details" class="form-control details" rows="2" required></textarea>
                                 </div>
                             </div>
-                                  
+                            <button  type="submit" value="submit" class="btn btn-primary">Submit</button>
                                   </div>
+                                 
                                     </div>
-                                <button  type="submit" value="submit" class="btn btn-info">Submit</button>
+                                
+                               
                             </form>
-                      
+                            
                             </div>
-
+                           
                         </div>
                     </section>
 
@@ -184,7 +194,36 @@
         </section>
     </section>
     <!--main content end-->
-
+    <div id="csoModal" class="modal fade" role="dialog">
+            <div class="modal-dialog"  style="width:90%">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Service Providers Nearest to you</h4>
+                </div>
+                <div class="modal-body">
+                  <p class="alert alert-info"><strong class="SpNumber lead"></strong> Note: You need to save this safepal case number inorder to get help from the service providers below.</p>
+                  <table  class="display table table-bordered table-striped" id="dynamic-table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Working hours</th>
+                            <th class="hidden-phone">Contact</th>
+                        </tr>
+                        </thead>
+                        <tbody class="csos"></tbody>
+                        </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
 
 </section>
 
@@ -192,6 +231,9 @@
 
 <!--Core js-->
 <script src="js/jquery.js"></script>
+<!-- <script
+  src="./js//datepicker/datepicker.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
 <script src="bs3/js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/jquery.scrollTo.min.js"></script>
@@ -254,13 +296,14 @@ function showPosition(position) {
 
     function callback(data)
     {
-        country.innerHTML = data.country_name;
-        state.innerHTML = data.state;
-        city.innerHTML = data.city;
-        postal.innerHTML = data.postal;
+        console.log(data);
+        // country.innerHTML = data.country_name;
+        // state.innerHTML = data.state;
+        // city.innerHTML = data.city;
+        // postal.innerHTML = data.postal;
         latitude.innerHTML = data.latitude;
         longitude.innerHTML = data.longitude;
-        ip.innerHTML = data.IPv4;
+        // ip.innerHTML = data.IPv4;
     }
 
     var script = document.createElement('script');
