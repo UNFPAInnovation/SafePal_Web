@@ -20,6 +20,7 @@
       $('#notify').show().addClass("alert-info").text("Submitting data");
       thisApp.genToken(function(err, token) {
         //get token and s
+        console.log(token);
         var formdata = {
           age: thisApp._calculateAge($("#selfReportForm .date").val()),
           latitude: $("#selfReportForm #latitude").val(),
@@ -54,6 +55,7 @@
       e.preventDefault();
       $('#notify').show().addClass("alert-info").text("Submitting data");
       thisApp.genToken(function(err, token) {
+        console.log(token);
         //get token and s
         var formdata = {
           age: $("#palReportForm .age").val(),
@@ -106,8 +108,10 @@
     this.genToken = function(callback) {
       fetch(BASEURL+"/api/v1/auth/newtoken", {
           "method": "GET",
+         // mode:"cors",
           "headers": {
-            "userid": "C7rPaEAN9NpPGR8e9wz9bzw"
+            "userid": "C7rPaEAN9NpPGR8e9wz9bzw",
+          //  'Access-Control-Allow-Origin':'*',
           }
         })
         .then(response => response.json())
@@ -123,68 +127,104 @@
 
     this.submitReport = function(data) {
       var formdata = data;
-      var settings = {
-        type: "POST",
-        async: true,
-        crossDomain: true,
-        headers: {
-          userid: "C7rPaEAN9NpPGR8e9wz9bzw"
+      fetch(BASEURL + "/api/v1/reports/addreport", {
+        method: 'post',
+        mode:'cors',
+        headers:{
+          "Content-Type":"application/json",
+          "userid": "C7rPaEAN9NpPGR8e9wz9bzw",
+
         },
-
-        data: formdata,
-        url: BASEURL + "/api/v1/reports/addreport"
-      };
-      $.ajax(settings)
-        .done(function(response) {
-          // console.log("Hello");
-          var obj = response.substring(response.length, 5);
-          let obj_ = JSON.parse(obj);
-          $('#notify').text("");
-          $('#notify').show().removeClass("alert-info").addClass("alert-success").text(obj_.message);
-          $('#selfReportForm')[0].reset();
-          $("#csoModal").modal();
-          $("#csoModal .SpNumber").text(obj_.casenumber)
-         
-          var table = "";
-          $("#csoModal .csos").html("");
-          $.each(obj_.csos, function (key, value) {
-            table +='<tr>'+
-            '<td>' + value.cso_name + '</td>' +
-            '<td>' + value.cso_location + '</td>' +
-            '<td>' + value.cso_working_hours + '</td>' +
-            '<td>' + value.cso_phone_number + '</td>'
-          });
-          $("#csoModal .csos").html(table);
-          setTimeout(function(){
-            $('#notify').hide();
-          },5000)
-
-        })
-        .fail(function(response, text) {
-          console.log(response);
-          console.log(text);
-          $('#notify').text("");
-          $('#notify').show().removeClass("alert-info").addClass("alert-danger").text(text);
+        body: JSON.stringify(formdata)
+      })
+      .then(response => response.text())
+      .then(function(response) {
+        var obj = response.substring(0, response.length-5);
+        console.log(obj)
+        let obj_ = JSON.parse(obj);
+        $('#notify').text("");
+        $('#notify').show().removeClass("alert-info").addClass("alert-success").text(obj_.message);
+        $('#selfReportForm')[0].reset();
+        $("#csoModal").modal();
+        $("#csoModal .SpNumber").text(obj_.casenumber)
+       
+        var table = "";
+        $("#csoModal .csos").html("");
+        $.each(obj_.csos, function (key, value) {
+          table +='<tr>'+
+          '<td>' + value.cso_name + '</td>' +
+          '<td>' + value.cso_location + '</td>' +
+          '<td>' + value.cso_working_hours + '</td>' +
+          '<td>' + value.cso_phone_number + '</td>'
         });
+        $("#csoModal .csos").html(table);
+        setTimeout(function(){
+          $('#notify').hide();
+        },5000);
+      }).catch(function(response) {
+        console.log(response);
+         // console.log(text);
+          $('#notify').text("");
+          $('#notify').show().removeClass("alert-info").addClass("alert-danger").text("Something went wrong.");
+      });
+      // var settings = {
+      //   type: "POST",
+      //     "headers": {
+      //       "userid": "C7rPaEAN9NpPGR8e9wz9bzw",
+      //     },
+      //   data: formdata,
+      //   url: BASEURL + "/api/v1/reports/addreport"
+      // };
+      // $.ajax(settings)
+      //   .done(function(response) {
+      //     // console.log("Hello");
+      //     var obj = response.substring(response.length, 5);
+      //     let obj_ = JSON.parse(obj);
+      //     $('#notify').text("");
+      //     $('#notify').show().removeClass("alert-info").addClass("alert-success").text(obj_.message);
+      //     $('#selfReportForm')[0].reset();
+      //     $("#csoModal").modal();
+      //     $("#csoModal .SpNumber").text(obj_.casenumber)
+         
+      //     var table = "";
+      //     $("#csoModal .csos").html("");
+      //     $.each(obj_.csos, function (key, value) {
+      //       table +='<tr>'+
+      //       '<td>' + value.cso_name + '</td>' +
+      //       '<td>' + value.cso_location + '</td>' +
+      //       '<td>' + value.cso_working_hours + '</td>' +
+      //       '<td>' + value.cso_phone_number + '</td>'
+      //     });
+      //     $("#csoModal .csos").html(table);
+      //     setTimeout(function(){
+      //       $('#notify').hide();
+      //     },5000)
+
+      //   })
+      //   .fail(function(response, text) {
+      //     console.log(response);
+      //     console.log(text);
+      //     $('#notify').text("");
+      //     $('#notify').show().removeClass("alert-info").addClass("alert-danger").text(text);
+      //   });
     };
 
     this.submitReport_pal = function(data) {
       var formdata = data;
-      var settings = {
-        type: "POST",
-        async: true,
-        crossDomain: true,
-        headers: {
-          userid: "C7rPaEAN9NpPGR8e9wz9bzw"
-        },
+      fetch(BASEURL + "/api/v1/reports/addreport", {
+        method: 'post',
+        mode:'cors',
+        headers:{
+          "Content-Type":"application/json",
+          "userid": "C7rPaEAN9NpPGR8e9wz9bzw",
 
-        data: formdata,
-        url: BASEURL + "/api/v1/reports/addreport"
-      };
-      $.ajax(settings)
-        .done(function(response) {
-          // console.log("Hello");
-          var obj = response.substring(response.length, 5);
+        },
+        body: JSON.stringify(formdata)
+      })
+      .then(response => response.text())
+      .then(function(response) {
+        console.log(response);
+        var obj = response.substring(0, response.length-5);
           let obj_ = JSON.parse(obj);
           $('#notify').text("");
           $('#notify').show().removeClass("alert-info").addClass("alert-success").text(obj_.message);
@@ -204,15 +244,53 @@
           $("#csoModal .csos").html(table);
           setTimeout(function(){
             $('#notify').hide();
-          },5000)
-
-        })
-        .fail(function(response, text) {
-          console.log(response);
-          console.log(text);
+          },5000);
+      }).catch(function(response) {
+        console.log(response);
+         // console.log(text);
           $('#notify').text("");
-          $('#notify').show().removeClass("alert-info").addClass("alert-danger").text(text);
-        });
+          $('#notify').show().removeClass("alert-info").addClass("alert-danger").text("Something went wrong.");
+      });
+      // var settings = {
+      //   type: "POST",
+      //   "headers": {
+      //     "userid": "C7rPaEAN9NpPGR8e9wz9bzw",
+      //   },
+      //   data: formdata,
+      //   url: BASEURL + "/api/v1/reports/addreport"
+      // };
+      // $.ajax(settings)
+      //   .done(function(response) {
+      //     // console.log("Hello");
+      //     var obj = response.substring(response.length, 5);
+      //     let obj_ = JSON.parse(obj);
+      //     $('#notify').text("");
+      //     $('#notify').show().removeClass("alert-info").addClass("alert-success").text(obj_.message);
+      //     $('#palReportForm')[0].reset();
+      //     $("#csoModal").modal();
+      //     $("#csoModal .SpNumber").text(obj_.casenumber)
+         
+      //     var table = "";
+      //     $("#csoModal .csos").html("");
+      //     $.each(obj_.csos, function (key, value) {
+      //       table +='<tr>'+
+      //       '<td>' + value.cso_name + '</td>' +
+      //       '<td>' + value.cso_location + '</td>' +
+      //       '<td>' + value.cso_working_hours + '</td>' +
+      //       '<td>' + value.cso_phone_number + '</td>'
+      //     });
+      //     $("#csoModal .csos").html(table);
+      //     setTimeout(function(){
+      //       $('#notify').hide();
+      //     },5000)
+
+      //   })
+      //   .fail(function(response, text) {
+      //     console.log(response);
+      //     console.log(text);
+      //     $('#notify').text("");
+      //     $('#notify').show().removeClass("alert-info").addClass("alert-danger").text(text);
+      //   });
     };
     // this.post = function(requesturl = "", data_sent = {}, callback) {
     //   let error_ = null;
