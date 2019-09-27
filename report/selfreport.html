@@ -119,9 +119,31 @@
                         <div class="panel-body">
                             <div class="col-md-6 col-sm-12">
                                 <form method="post" id="selfReportForm">
+                                        <div class="form-group" style="overflow: auto;">
+                                                <label style="clear: both; display: block;" for="genderselection">Are you a female or a male?</label>
+        
+                                                    <div style="float: left;" class="square-red single-row">
+                                                        <div  class="radio ">
+                                                            <label>
+                                                            <input  tabindex="3" type="radio"  name="gender" value="female">
+                                                            Female</label>
+                                                        </div>
+                                                    </div>
+                                                    <div style="float: left; clear: right;"  class="square-blue single-row">
+                                                        <div class="radio ">
+                                                            <label>
+                                                            <input tabindex="3" type="radio"   name="gender" value="male">
+                                                            Male</label>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="exampleInputAge">Are you disabled ? If yes, please describe your disability below.</label>
+                                                    <input name="disability" type="text" class="form-control round-input disability" placeholder="Type of disability" required>
+                                                </div>        
                                 <div class="form-group">
                                     <label for="exampleInputAge">When were you born?</label>
-                                    <input type="date" data-date="Select date" class="form-control round-input date" data-date-format="DD MMMM YYYY" placeholder="Date">
+                                    <input type="date" data-date="Select date" class="form-control round-input date max-date" data-date-format="DD MMMM YYYY" placeholder="Date">
                                     <input type="hidden" id="latitude"  name="latitude" value="32.00">
                                     <input type="hidden" id="longitude" name="longitude" value="0.32" > 
                                     <input name="reporter" type="hidden" value="self_report"/>
@@ -145,36 +167,16 @@
                                     <label for="exampleInputAge">Where did it happen?</label>
                                     <input name="location" type="text" class="form-control round-input location" id="exampleInputEmail1" placeholder="e.g. school, home" required>
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="exampleInputAge">Are you disabled ? If yes, please describe your disability below.</label>
-                                    <input name="disability" type="text" class="form-control round-input disability" placeholder="Type of disability" required>
-                                </div>
-                                        <div class="form-group">
-                                        <label for="genderselection">Are you a girl or a  boy?</label>
-
-                                            <div class="square-red single-row">
-                                        
-                                                <div  class="radio ">
-                                                    <label>
-                                                    <input  tabindex="3" type="radio"  name="gender" value="female">
-                                                    Girl</label>
-                                                </div>
-                                            </div>
-                                            <div class="square-blue single-row">
-                                                <div class="radio ">
-                                                    <label>
-                                                    <input tabindex="3" type="radio"   name="gender" value="male">
-                                                    Boy</label>
-                                                </div>
-                                            </div>
-                                    </div>
-                                        <div class="form-group">
                                 <label>Tell the story of the incident</label>
                                 <div >
                                     <textarea name="details" class="form-control details" rows="2" required></textarea>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                    <label for="exampleInputAge">Contact</label>
+                                    <input name="contact" type="tel" class="form-control round-input contact" placeholder="Tel Phone number" required>
+                                </div>
                             <button  type="submit" value="submit" class="btn btn-primary">Submit</button>
                                   </div>
                                  

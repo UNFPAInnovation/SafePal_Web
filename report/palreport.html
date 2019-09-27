@@ -125,15 +125,36 @@
                                         <option value="Other">Other</option>
                                         </select>
                                 </div>
+                                <div class="form-group" style="overflow: auto;">
+                                        <label style="clear: both; display: block;" for="genderselection">What is your friend's gender?</label>
+
+                                            <div style="float: left;" class="square-red single-row">
+                                                <div  class="radio ">
+                                                    <label>
+                                                    <input  tabindex="3" type="radio"  name="gender" value="female">
+                                                    Female</label>
+                                                </div>
+                                            </div>
+                                            <div style="float: left; clear: right;"  class="square-blue single-row">
+                                                <div class="radio ">
+                                                    <label>
+                                                    <input tabindex="3" type="radio"   name="gender" value="male">
+                                                    Male</label>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="exampleInputAge">Is he/she disabled ? If yes, please describe the disability below.</label>
+                                            <input name="disability" type="text" class="form-control round-input disability" placeholder="Type of disability" required>
+                                        </div>
                                      <div class="form-group">
                                     <label for="exampleInputAge">How old is he / she?</label>
-                                    <input name="age" type="number" class="form-control round-input age" id="exampleInputEmail1" required>
-                                    <!-- <select name="age" class="form-control age" required>
+                                     <select name="age" class="form-control age" required>
                                         <option value="Unknown">Click here to choose</option>
                                         <option value="Below 10">Below 10 </option>
                                         <option value="Between 10 - 24">Between 10 - 24</option>
                                         <option value="above 24">above 24</option>
-                                        </select> -->
+                                        </select>
                                 </div>
                                      <div class="form-group">
                                     <label for="exampleInputAge">What happened to your friend?</label>
@@ -153,11 +174,9 @@
                                      <input name="reporter" type="hidden" value="pal_report"/>
                                      <input name="report_source" type="hidden" value="web"/>
                                     </div>
-                                    <div class="form-group">
-                                            <label for="exampleInputAge">Is he/she disabled ? If yes, please describe the disability below.</label>
-                                            <input name="disability" type="text" class="form-control round-input disability" placeholder="Type of disability" required>
-                                        </div>
-                                        <div class="form-group">
+                                    
+
+                                        <!-- <div class="form-group">
                                         <label for="genderselection">What is your friend's gender?</label>
 
                                             <div class="square-red single-row">
@@ -175,7 +194,7 @@
                                                     Boy</label>
                                                 </div>
                                             </div>
-                                    </div>
+                                    </div> -->
                                         <div class="form-group">
                                 <label>Tell us the story</label>
                                 <div >
@@ -184,7 +203,13 @@
                                     
                                 </div>
 
-                            </div><button  type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            <div class="form-group">
+                                    <label for="exampleInputAge">Contact</label>
+                                    <input name="contact" type="tel" class="form-control round-input contact" placeholder="Tel Phone number" required>
+                                </div>
+                            
+                            <button  type="submit" class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
                                 

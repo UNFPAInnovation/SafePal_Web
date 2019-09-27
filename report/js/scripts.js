@@ -3,7 +3,11 @@
   $(document).ready(function() {
     /* Date picker*/
     var thisApp = this;
-   
+
+    //var dateTo = moment().format("MM-DD-YYYY"));
+    var dateFrom = moment().subtract(7,'y').format("YYYY-MM-DD");
+    console.log(dateFrom);
+   $('.max-date').attr("max",dateFrom);
     var BASEURL = "https://api.safepal.co";
     $("input").on("change", function() {
       this.setAttribute(
@@ -35,7 +39,7 @@
           typeID: 1,
           gender: thisApp.displayRadioValue(),
           details: $("#selfReportForm .details").val(),
-          contact: "Not provided",
+          contact: $("#selfReportForm .contact").val(),
           incident_date: "Unknown",
           perpetuator: "Unknown",
           token: token
@@ -71,7 +75,7 @@
           typeID: 1,
           gender: thisApp.displayRadioValue(),
           details: $("#palReportForm .details").val(),
-          contact: "Not provided",
+          contact: $("#palReportForm .contact").val(),
           incident_date: "Unknown",
           perpetuator: "Unknown",
           token: token
